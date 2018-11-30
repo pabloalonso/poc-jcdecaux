@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<businessObjectModel modelVersion="1.0" productVersion="7.7.4">
+    <businessObjects>
+        <businessObject qualifiedName="com.company.model.MasterData">
+            <fields>
+                <field type="STRING" length="255" name="name" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="valueDefault" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="valueAlternative" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="project" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="list" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="orderPosition" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="enabled" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries>
+                <query name="selectProjects" content="SELECT m &#xA;FROM MasterData m &#xA;WHERE &#xA;m.project = 'Framework'&#xA;AND m.list = 'Projects'&#xD;&#xA;AND m.enabled = true&#xA;ORDER BY m.orderPosition ASC" returnType="java.util.List">
+                    <queryParameters/>
+                </query>
+                <query name="selectListsOfProject" content="SELECT m &#xD;&#xA;FROM MasterData m &#xD;&#xA;WHERE &#xD;&#xA;m.project = :project&#xD;&#xA;AND m.list = 'Lists'&#xD;&#xA;AND m.enabled = true&#xD;&#xA;ORDER BY m.orderPosition ASC" returnType="java.util.List">
+                    <queryParameters>
+                        <queryParameter name="project" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+                <query name="selectItemsOfListOfProject" content="SELECT m &#xA;FROM MasterData m &#xA;WHERE &#xA;m.project = :project&#xA;AND m.list = :list&#xA;ORDER BY m.persistenceId ASC" returnType="java.util.List">
+                    <queryParameters>
+                        <queryParameter name="project" className="java.lang.String"/>
+                        <queryParameter name="list" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+                <query name="getList" content="SELECT m &#xD;&#xA;FROM MasterData m &#xD;&#xA;WHERE &#xD;&#xA;m.project = :project&#xD;&#xA;AND m.list = :list&#xD;&#xA;AND m.enabled = true&#xD;&#xA;ORDER BY m.persistenceId ASC" returnType="java.util.List">
+                    <queryParameters>
+                        <queryParameter name="project" className="java.lang.String"/>
+                        <queryParameter name="list" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+                <query name="findItemByNameOnList" content="SELECT m &#xA;FROM MasterData m &#xA;WHERE m.name = :name&#xA;AND m.project = :project&#xA;AND m.list = :list&#xA;ORDER BY m.persistenceId ASC" returnType="java.util.List">
+                    <queryParameters>
+                        <queryParameter name="name" className="java.lang.String"/>
+                        <queryParameter name="project" className="java.lang.String"/>
+                        <queryParameter name="list" className="java.lang.String"/>
+                    </queryParameters>
+                </query>
+            </queries>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Project">
+            <fields>
+                <field type="STRING" length="255" name="definition" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="designation" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="responsable" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="demandeur" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="centreProfit" nullable="true" collection="false"/>
+                <field type="LOCALDATE" length="255" name="dateDebut" nullable="true" collection="false"/>
+                <field type="LOCALDATE" length="255" name="dateFin" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="typeProject" nullable="true" collection="false"/>
+                <relationField type="COMPOSITION" reference="com.company.model.Configuration" fetchType="EAGER" name="configurations" nullable="true" collection="true"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Configuration">
+            <fields>
+                <field type="STRING" length="255" name="codeConfiguration" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="designation" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="codeNewDev" nullable="true" collection="false"/>
+                <field type="DOUBLE" length="255" name="qteConfiguration" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="montantNewDev" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="codeMobilier" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="noCommande" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="produits" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="activiteMarketing" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="typeConfiguration" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="enviroment" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="digital" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="soixantDix" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="quatreVingts" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="versionBudget" nullable="true" collection="false"/>
+                <field type="DOUBLE" length="255" name="budgetMatiere" nullable="true" collection="false"/>
+                <field type="DOUBLE" length="255" name="budgetEtude" nullable="true" collection="false"/>
+                <relationField type="COMPOSITION" reference="com.company.model.MembreEquipe" fetchType="EAGER" name="equipeProjet" nullable="true" collection="true"/>
+                <relationField type="COMPOSITION" reference="com.company.model.SousEnsemble" fetchType="EAGER" name="sousEnsembles" nullable="true" collection="true"/>
+                <field type="BOOLEAN" length="255" name="activiteEtudeGeneral" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.MembreEquipe">
+            <fields>
+                <field type="STRING" length="255" name="codeRole" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="designationRole" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="utilisateurSAP" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nomRole" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="adresseEmail" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Activitie">
+            <fields>
+                <field type="STRING" length="255" name="nomActivite" nullable="true" collection="false"/>
+                <field type="DOUBLE" length="255" name="dureeJours" nullable="true" collection="false"/>
+                <field type="LOCALDATE" length="255" name="dateFin" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="executionOrder" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="codeActivite" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="typeActivite" nullable="true" collection="false"/>
+                <relationField type="COMPOSITION" reference="com.company.model.SousActivitie" fetchType="EAGER" name="sousActivities" nullable="true" collection="true"/>
+                <field type="BOOLEAN" length="255" name="executed" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.SousEnsemble">
+            <fields>
+                <field type="STRING" length="255" name="codeSousEnsemble" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="designation" nullable="true" collection="false"/>
+                <relationField type="COMPOSITION" reference="com.company.model.Activitie" fetchType="EAGER" name="activities" nullable="true" collection="true"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.SousActivitie">
+            <fields>
+                <field type="STRING" length="255" name="code" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="nom" nullable="true" collection="false"/>
+                <field type="DOUBLE" length="255" name="chargeJours" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="executed" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+    </businessObjects>
+</businessObjectModel>

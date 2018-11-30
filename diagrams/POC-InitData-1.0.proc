@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
+  <process:MainProcess xmi:id="_VrOogPS2Eei8R7BJ1_ftSQ" name="POC-InitData" author="bonitasoft" bonitaVersion="7.7.4" bonitaModelVersion="7.6.0-002" configId="ACED000574001C504F432D496E697444617461372E362E302D303032372E372E347370">
+    <elements xmi:type="process:Pool" xmi:id="_VrOogfS2Eei8R7BJ1_ftSQ" name="InitData" welcomePageInternal="false" basedOnLookAndFeel="Default Application">
+      <elements xmi:type="process:Lane" xmi:id="_VrOogvS2Eei8R7BJ1_ftSQ" name="Employé (lane)" actor="_VrOoq_S2Eei8R7BJ1_ftSQ">
+        <elements xmi:type="process:StartEvent" xmi:id="_VrOog_S2Eei8R7BJ1_ftSQ" name="Démarrer1" outgoing="_WjGrsPS2Eei8R7BJ1_ftSQ">
+          <viewPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_VrOohPS2Eei8R7BJ1_ftSQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_VrOohfS2Eei8R7BJ1_ftSQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_VrOohvS2Eei8R7BJ1_ftSQ" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_VrOoh_S2Eei8R7BJ1_ftSQ" name="" content="" returnTypeFixed="true"/>
+        </elements>
+        <elements xmi:type="process:EndTerminatedEvent" xmi:id="_WjEPcPS2Eei8R7BJ1_ftSQ" name="Fin1" incoming="_WjGrsPS2Eei8R7BJ1_ftSQ">
+          <viewPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_WjE2g_S2Eei8R7BJ1_ftSQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_WjE2gfS2Eei8R7BJ1_ftSQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_WjE2gPS2Eei8R7BJ1_ftSQ" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_WjE2gvS2Eei8R7BJ1_ftSQ" name="" content="" returnTypeFixed="true"/>
+        </elements>
+      </elements>
+      <resourceFolders xmi:type="process:ResourceFolder" xmi:id="_VsyuwPS2Eei8R7BJ1_ftSQ" path="_VrOogfS2Eei8R7BJ1_ftSQ/application/application"/>
+      <mandatorySymbol xmi:type="expression:Expression" xmi:id="_VrOomfS2Eei8R7BJ1_ftSQ" name="" content="" returnTypeFixed="true"/>
+      <mandatoryLabel xmi:type="expression:Expression" xmi:id="_VrOomvS2Eei8R7BJ1_ftSQ" name="" content="" returnTypeFixed="true"/>
+      <errorTemplate xmi:type="process:AssociatedFile" xmi:id="_VrOom_S2Eei8R7BJ1_ftSQ" path="_T09DYfS2Eei8R7BJ1_ftSQ/html/error.html"/>
+      <processTemplate xmi:type="process:AssociatedFile" xmi:id="_VrOonPS2Eei8R7BJ1_ftSQ" path="_VrOogfS2Eei8R7BJ1_ftSQ/html/process.html"/>
+      <pageTemplate xmi:type="process:AssociatedFile" xmi:id="_VrOonfS2Eei8R7BJ1_ftSQ" path="_VrOogfS2Eei8R7BJ1_ftSQ/html/page.html"/>
+      <consultationTemplate xmi:type="process:AssociatedFile" xmi:id="_VrOonvS2Eei8R7BJ1_ftSQ" path="_VrOogfS2Eei8R7BJ1_ftSQ/html/consultation.html"/>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_y4248PS5Eei8R7BJ1_ftSQ" name="datas" multiple="true" dataType="_VrOoxPS2Eei8R7BJ1_ftSQ" className="com.company.model.MasterData">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_Omm4wPTCEei8R7BJ1_ftSQ" name="init_datas()" content="import com.company.model.MasterData&#xD;&#xA;&#xD;&#xA;class H {&#xD;&#xA;&#x9;def static newM(p,l,n,d,a){&#xD;&#xA;&#x9;&#x9;MasterData m = new MasterData();&#xD;&#xA;&#x9;&#x9;m.setEnabled(true)&#xD;&#xA;&#x9;&#x9;m.setOrderPosition(0)&#xD;&#xA;&#x9;&#x9;m.setProject(p)&#xD;&#xA;&#x9;&#x9;m.setList(&quot;list_&quot;+l)&#xD;&#xA;&#x9;&#x9;m.setName(n)&#xD;&#xA;&#x9;&#x9;m.setValueDefault(d)&#xD;&#xA;&#x9;&#x9;m.setValueAlternative(a)&#xD;&#xA;&#x9;&#x9;return m&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;def static newM(p,l,n,d){&#xD;&#xA;&#x9;&#x9;MasterData m = new MasterData();&#xD;&#xA;&#x9;&#x9;m.setEnabled(true)&#xD;&#xA;&#x9;&#x9;m.setOrderPosition(0)&#xD;&#xA;&#x9;&#x9;m.setProject(p)&#xD;&#xA;&#x9;&#x9;m.setList(&quot;list_&quot;+l)&#xD;&#xA;&#x9;&#x9;m.setName(n)&#xD;&#xA;&#x9;&#x9;m.setValueDefault(d)&#xD;&#xA;&#x9;&#x9;m.setValueAlternative(d)&#xD;&#xA;&#x9;&#x9;return m&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;def static newM(p,l,n){&#xD;&#xA;&#x9;&#x9;MasterData m = new MasterData();&#xD;&#xA;&#x9;&#x9;m.setEnabled(true)&#xD;&#xA;&#x9;&#x9;m.setOrderPosition(0)&#xD;&#xA;&#x9;&#x9;m.setProject(p)&#xD;&#xA;&#x9;&#x9;m.setList(&quot;list_&quot;+l)&#xD;&#xA;&#x9;&#x9;m.setName(n)&#xD;&#xA;&#x9;&#x9;m.setValueDefault(n)&#xD;&#xA;&#x9;&#x9;m.setValueAlternative(n)&#xD;&#xA;&#x9;&#x9;return m&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;def static newP(p){&#xD;&#xA;&#x9;&#x9;MasterData m = new MasterData();&#xD;&#xA;&#x9;&#x9;m.setEnabled(true)&#xD;&#xA;&#x9;&#x9;m.setOrderPosition(0)&#xD;&#xA;&#x9;&#x9;m.setProject(&quot;Framework&quot;)&#xD;&#xA;&#x9;&#x9;m.setList(&quot;Projects&quot;)&#xD;&#xA;&#x9;&#x9;m.setName(p)&#xD;&#xA;&#x9;&#x9;m.setValueDefault(p)&#xD;&#xA;&#x9;&#x9;m.setValueAlternative(p)&#xD;&#xA;&#x9;&#x9;return m&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;def static newL(p,l){&#xD;&#xA;&#x9;&#x9;MasterData m = new MasterData();&#xD;&#xA;&#x9;&#x9;m.setEnabled(true)&#xD;&#xA;&#x9;&#x9;m.setOrderPosition(0)&#xD;&#xA;&#x9;&#x9;m.setProject(p)&#xD;&#xA;&#x9;&#x9;m.setList(&quot;Lists&quot;)&#xD;&#xA;&#x9;&#x9;m.setName(&quot;list_&quot;+l)&#xD;&#xA;&#x9;&#x9;m.setValueDefault(l)&#xD;&#xA;&#x9;&#x9;m.setValueAlternative(l)&#xD;&#xA;&#x9;&#x9;return m&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;List&lt;MasterData> output = []&#xD;&#xA;String project = &quot;POC&quot;&#xD;&#xA;output.add(H.newP(project))&#xD;&#xA;&#xD;&#xA;String list = &quot;Demandeur&quot;&#xD;&#xA;output.add(H.newL(project,list))&#xD;&#xA;output.add(H.newM(project,list,&quot;00000001&quot;,&quot;JC DECAUX BELGIUM&quot;,&quot;marc.etienne@jcdecaux.com&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;00000002&quot;,&quot;JC DECAUX PORTUGAL&quot;,&quot;marc.etienne@jcdecaux.com&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;00000003&quot;,&quot;JCDECAUX DEUTSCHLAND GMB&quot;,&quot;marc.etienne@jcdecaux.com&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;00000004&quot;,&quot;JCD UK STREET FURNITURE&quot;,&quot;marc.etienne@jcdecaux.com&quot;))&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;list = &quot;CentreProfit&quot;&#xD;&#xA;output.add(H.newL(project,list))&#xD;&#xA;&#xD;&#xA;output.add(H.newM(project,list,&quot;C066S1084&quot;,&quot;Projet France&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;C066S1083&quot;,&quot;Projet Filiale&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;C066S1082&quot;,&quot;Projet Corporate&quot;))&#xD;&#xA;&#xD;&#xA;list = &quot;TypeProjet&quot;&#xD;&#xA;output.add(H.newL(project,list))&#xD;&#xA;&#xD;&#xA;output.add(H.newM(project,list,&quot;05&quot;,&quot;Projet Corp&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;02&quot;,&quot;Projet DPJ&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;01&quot;,&quot;Projet Supply chain&quot;))&#xD;&#xA;&#xD;&#xA;list = &quot;Produits&quot;&#xD;&#xA;output.add(H.newL(project,list))&#xD;&#xA;&#xD;&#xA;output.add(H.newM(project,list,&quot;ABRIBUS&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;AUTRE&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;BANCS&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;BARRIERES&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;BILLBOARD&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;BORNE&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;BORNE DE  PROPRETE&quot;))&#xD;&#xA;&#xD;&#xA;list = &quot;ActiviteMarketing&quot;&#xD;&#xA;output.add(H.newL(project,list))&#xD;&#xA;&#xD;&#xA;output.add(H.newM(project,list,&quot;Airport&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;Grand Format&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;Metro&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;Mobilier Urbain&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;Transport&quot;))&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;list = &quot;Type&quot;&#xD;&#xA;output.add(H.newL(project,list))&#xD;&#xA;&#xD;&#xA;output.add(H.newM(project,list,&quot;Non Publicitaire&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;Publicitaire&quot;))&#xD;&#xA;&#xD;&#xA;list = &quot;Enviroment&quot;&#xD;&#xA;output.add(H.newL(project,list))&#xD;&#xA;&#xD;&#xA;output.add(H.newM(project,list,&quot;Indoor&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;Mixte&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;Outdoor&quot;))&#xD;&#xA;&#xD;&#xA;list = &quot;EquipeProjetRole&quot;&#xD;&#xA;output.add(H.newL(project,list))&#xD;&#xA;&#xD;&#xA;output.add(H.newM(project,list,&quot;Z0&quot;,&quot;Codification&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;Z3&quot;,&quot;Pilote BE&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;Z5&quot;,&quot;Chef de projet&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;Z4&quot;,&quot;Supply Chain&quot;))&#xD;&#xA;&#xD;&#xA;list = &quot;EquipeProjetNom&quot;&#xD;&#xA;output.add(H.newL(project,list))&#xD;&#xA;&#xD;&#xA;output.add(H.newM(project,list,&quot;LAPORTE&quot;,&quot;Nicolas LAPORTE&quot;,&quot;nicolas.laporte@jcdecaux.com&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;CONSTENSOUX&quot;,&quot;Timothée CONSTENSOUX&quot;,&quot;timothee.constensoux@jcdecaux.com&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;ETIENNEM&quot;,&quot;Marc ETIENNE&quot;,&quot;marc.etienne@jcdecaux.com&quot;))&#xD;&#xA;&#xD;&#xA;list = &quot;SousActivites&quot;&#xD;&#xA;output.add(H.newL(project,list))&#xD;&#xA;&#xD;&#xA;output.add(H.newM(project,list,&quot;MECA_LP1&quot;,&quot;Etudes Mécaniques LP1&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;MECA_LP2&quot;,&quot;Etudes Mécaniques LP2&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;LP_SOFTA&quot;,&quot;Etudes logiciels Automates&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;LP_SOFTE&quot;,&quot;Etudes logiciels Embarqués&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;LP_DIGI&quot;,&quot;Digital, Interactivité, Communication&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;LP_ELEC&quot;,&quot;Etudes électriques&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;LP_HARD&quot;,&quot;Etudes électroniques&quot;))&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;list = &quot;Activites&quot;&#xD;&#xA;output.add(H.newL(project,list))&#xD;&#xA;&#xD;&#xA;output.add(H.newM(project,list,&quot;D&quot;,&quot;Etudes détaillées&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;E&quot;,&quot;Codification&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;F&quot;,&quot;Sourcing&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;G&quot;,&quot;Indus. - Prod. - Appro. 1st&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;H&quot;,&quot;Livraison 1st&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;K&quot;,&quot;Indus.- Prod. - Appro. Latest&quot;))&#xD;&#xA;output.add(H.newM(project,list,&quot;L&quot;,&quot;Livraison Latest&quot;))&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;return output;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA; " interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
+      </data>
+      <confirmationTemplate xmi:type="process:AssociatedFile" xmi:id="_VrOon_S2Eei8R7BJ1_ftSQ" path="_VrOogfS2Eei8R7BJ1_ftSQ/html/_VrOogfS2Eei8R7BJ1_ftSQconfirmation.html"/>
+      <entryRedirectionURL xmi:type="expression:Expression" xmi:id="_VrOooPS2Eei8R7BJ1_ftSQ" name="" content="" returnTypeFixed="true"/>
+      <confirmationMessage xmi:type="expression:Expression" xmi:id="_VrOoofS2Eei8R7BJ1_ftSQ" name="" content="" returnTypeFixed="true"/>
+      <formMapping xmi:type="process:FormMapping" xmi:id="_VrOoovS2Eei8R7BJ1_ftSQ">
+        <targetForm xmi:type="expression:Expression" xmi:id="_D2V0IPTCEei8R7BJ1_ftSQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+      </formMapping>
+      <recapPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_VrOopPS2Eei8R7BJ1_ftSQ" name="" content="" returnTypeFixed="true"/>
+      <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_VrOopfS2Eei8R7BJ1_ftSQ">
+        <targetForm xmi:type="expression:Expression" xmi:id="_VrOopvS2Eei8R7BJ1_ftSQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+      </overviewFormMapping>
+      <viewPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_VrOop_S2Eei8R7BJ1_ftSQ" name="" content="" returnTypeFixed="true"/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_WjGrsPS2Eei8R7BJ1_ftSQ" target="_WjEPcPS2Eei8R7BJ1_ftSQ" source="_VrOog_S2Eei8R7BJ1_ftSQ">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_WjGrsfS2Eei8R7BJ1_ftSQ"/>
+        <condition xmi:type="expression:Expression" xmi:id="_WjGrsvS2Eei8R7BJ1_ftSQ" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+      </connections>
+      <actors xmi:type="process:Actor" xmi:id="_VrOoq_S2Eei8R7BJ1_ftSQ" documentation="Ceci est un exemple d'acteur associé à tous les utilisateurs d'ACME" name="Employee actor" initiator="true"/>
+      <contract xmi:type="process:Contract" xmi:id="_VrOorPS2Eei8R7BJ1_ftSQ"/>
+      <searchIndexes xmi:type="process:SearchIndex" xmi:id="_VrOorfS2Eei8R7BJ1_ftSQ">
+        <name xmi:type="expression:Expression" xmi:id="_VrOorvS2Eei8R7BJ1_ftSQ" content="" returnTypeFixed="true"/>
+        <value xmi:type="expression:Expression" xmi:id="_VrOor_S2Eei8R7BJ1_ftSQ" content="" returnTypeFixed="true"/>
+      </searchIndexes>
+      <searchIndexes xmi:type="process:SearchIndex" xmi:id="_VrOosPS2Eei8R7BJ1_ftSQ">
+        <name xmi:type="expression:Expression" xmi:id="_VrOosfS2Eei8R7BJ1_ftSQ" content="" returnTypeFixed="true"/>
+        <value xmi:type="expression:Expression" xmi:id="_VrOosvS2Eei8R7BJ1_ftSQ" content="" returnTypeFixed="true"/>
+      </searchIndexes>
+      <searchIndexes xmi:type="process:SearchIndex" xmi:id="_VrOos_S2Eei8R7BJ1_ftSQ">
+        <name xmi:type="expression:Expression" xmi:id="_VrOotPS2Eei8R7BJ1_ftSQ" content="" returnTypeFixed="true"/>
+        <value xmi:type="expression:Expression" xmi:id="_VrOotfS2Eei8R7BJ1_ftSQ" content="" returnTypeFixed="true"/>
+      </searchIndexes>
+      <searchIndexes xmi:type="process:SearchIndex" xmi:id="_VrOotvS2Eei8R7BJ1_ftSQ">
+        <name xmi:type="expression:Expression" xmi:id="_VrOot_S2Eei8R7BJ1_ftSQ" content="" returnTypeFixed="true"/>
+        <value xmi:type="expression:Expression" xmi:id="_VrOouPS2Eei8R7BJ1_ftSQ" content="" returnTypeFixed="true"/>
+      </searchIndexes>
+      <searchIndexes xmi:type="process:SearchIndex" xmi:id="_VrOoufS2Eei8R7BJ1_ftSQ">
+        <name xmi:type="expression:Expression" xmi:id="_VrOouvS2Eei8R7BJ1_ftSQ" content="" returnTypeFixed="true"/>
+        <value xmi:type="expression:Expression" xmi:id="_VrOou_S2Eei8R7BJ1_ftSQ" content="" returnTypeFixed="true"/>
+      </searchIndexes>
+    </elements>
+    <datatypes xmi:type="process:BooleanType" xmi:id="_VrOovPS2Eei8R7BJ1_ftSQ" name="Boolean"/>
+    <datatypes xmi:type="process:DateType" xmi:id="_VrOovfS2Eei8R7BJ1_ftSQ" name="Date"/>
+    <datatypes xmi:type="process:IntegerType" xmi:id="_VrOovvS2Eei8R7BJ1_ftSQ" name="Integer"/>
+    <datatypes xmi:type="process:LongType" xmi:id="_VrOov_S2Eei8R7BJ1_ftSQ" name="Long"/>
+    <datatypes xmi:type="process:DoubleType" xmi:id="_VrOowPS2Eei8R7BJ1_ftSQ" name="Double"/>
+    <datatypes xmi:type="process:StringType" xmi:id="_VrOowfS2Eei8R7BJ1_ftSQ" name="Text"/>
+    <datatypes xmi:type="process:JavaType" xmi:id="_VrOowvS2Eei8R7BJ1_ftSQ" name="Java_object"/>
+    <datatypes xmi:type="process:XMLType" xmi:id="_VrOow_S2Eei8R7BJ1_ftSQ" name="XML"/>
+    <datatypes xmi:type="process:BusinessObjectType" xmi:id="_VrOoxPS2Eei8R7BJ1_ftSQ" name="Business_Object"/>
+  </process:MainProcess>
+  <notation:Diagram xmi:id="_VrOoxfS2Eei8R7BJ1_ftSQ" type="Process" element="_VrOogPS2Eei8R7BJ1_ftSQ" name="MonDiagramme" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_VrOoxvS2Eei8R7BJ1_ftSQ" type="2007" element="_VrOogfS2Eei8R7BJ1_ftSQ">
+      <children xmi:type="notation:DecorationNode" xmi:id="_VrOox_S2Eei8R7BJ1_ftSQ" type="5008"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_VrOoyPS2Eei8R7BJ1_ftSQ" type="7001">
+        <children xmi:type="notation:Node" xmi:id="_VrOoyfS2Eei8R7BJ1_ftSQ" type="3007" element="_VrOogvS2Eei8R7BJ1_ftSQ">
+          <children xmi:type="notation:DecorationNode" xmi:id="_VrOoyvS2Eei8R7BJ1_ftSQ" type="5007"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_VrOoy_S2Eei8R7BJ1_ftSQ" type="7002">
+            <children xmi:type="notation:Shape" xmi:id="_VrOoz_S2Eei8R7BJ1_ftSQ" type="3002" element="_VrOog_S2Eei8R7BJ1_ftSQ" fontName="Segoe UI">
+              <children xmi:type="notation:DecorationNode" xmi:id="_VrOo0PS2Eei8R7BJ1_ftSQ" type="5024">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_VrOo0fS2Eei8R7BJ1_ftSQ" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VrOo0vS2Eei8R7BJ1_ftSQ" x="60" y="68"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_WjE2hPS2Eei8R7BJ1_ftSQ" type="3062" element="_WjEPcPS2Eei8R7BJ1_ftSQ" fontName="Segoe UI">
+              <children xmi:type="notation:DecorationNode" xmi:id="_WjE2hvS2Eei8R7BJ1_ftSQ" type="5090">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_WjE2h_S2Eei8R7BJ1_ftSQ" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WjE2hfS2Eei8R7BJ1_ftSQ" x="271" y="84"/>
+            </children>
+          </children>
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_VrOo0_S2Eei8R7BJ1_ftSQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_VrOo1PS2Eei8R7BJ1_ftSQ" fontName="Segoe UI"/>
+          <styles xmi:type="notation:LineStyle" xmi:id="_VrOo1fS2Eei8R7BJ1_ftSQ"/>
+          <styles xmi:type="notation:FillStyle" xmi:id="_VrOo1vS2Eei8R7BJ1_ftSQ"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VrOo1_S2Eei8R7BJ1_ftSQ"/>
+        </children>
+      </children>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_VrOo2PS2Eei8R7BJ1_ftSQ"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_VrOo2fS2Eei8R7BJ1_ftSQ" fontName="Segoe UI"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_VrOo2vS2Eei8R7BJ1_ftSQ"/>
+      <styles xmi:type="notation:FillStyle" xmi:id="_VrOo2_S2Eei8R7BJ1_ftSQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VrOo3PS2Eei8R7BJ1_ftSQ" width="1680" height="250"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_VrOo3fS2Eei8R7BJ1_ftSQ"/>
+    <edges xmi:type="notation:Connector" xmi:id="_WjHSwPS2Eei8R7BJ1_ftSQ" type="4001" element="_WjGrsPS2Eei8R7BJ1_ftSQ" source="_VrOoz_S2Eei8R7BJ1_ftSQ" target="_WjE2hPS2Eei8R7BJ1_ftSQ" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_WjHSw_S2Eei8R7BJ1_ftSQ" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_WjHSxPS2Eei8R7BJ1_ftSQ" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_WjHSwfS2Eei8R7BJ1_ftSQ" fontName="Segoe UI"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_WjHSwvS2Eei8R7BJ1_ftSQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    </edges>
+  </notation:Diagram>
+</xmi:XMI>

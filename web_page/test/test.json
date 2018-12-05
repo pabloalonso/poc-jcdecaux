@@ -1,0 +1,94 @@
+{
+  "designerVersion" : "1.7.69",
+  "id" : "test",
+  "name" : "test",
+  "lastUpdate" : 1543938834709,
+  "rows" : [ [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "allowHTML" : {
+        "type" : "constant",
+        "value" : true
+      },
+      "text" : {
+        "type" : "interpolation",
+        "value" : "<pre>{{temp | json}}</pre>"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "left"
+      }
+    },
+    "reference" : "13f275ce-9d4b-4f39-adee-f87ba3550895",
+    "id" : "pbText"
+  } ], [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "listSelectedElements" : {
+        "type" : "variable",
+        "value" : "pills.output"
+      },
+      "listAvailableElements" : {
+        "type" : "variable",
+        "value" : "pills.available"
+      }
+    },
+    "reference" : "af624d61-3537-4ffa-9d7d-ff58e10aa075",
+    "id" : "customSortable"
+  } ] ],
+  "assets" : [ {
+    "id" : "82c13f41-9597-4f3c-9e58-e966f904697d",
+    "name" : "style.css",
+    "type" : "css",
+    "order" : 0,
+    "external" : false
+  }, {
+    "id" : "fb6b7f78-d2a2-4cde-8cdb-177c7fceb39a",
+    "name" : "localization.json",
+    "type" : "json",
+    "order" : 0,
+    "external" : false
+  } ],
+  "inactiveAssets" : [ ],
+  "data" : {
+    "pills" : {
+      "type" : "json",
+      "value" : "{\"available\":[{\n \"name\":\"project\", \"displayName\":\"CUCUPROJECT\"\n},{\n \"name\":\"cucu\", \"displayName\":\"CUCU\"\n}],\n\"output\":[]}",
+      "exposed" : false
+    },
+    "temp" : {
+      "type" : "constant",
+      "exposed" : false
+    }
+  },
+  "uuid" : "c836ac6b-b368-4638-a2b1-401ad66848c3",
+  "type" : "form"
+}

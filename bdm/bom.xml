@@ -129,6 +129,7 @@
                 <field type="STRING" length="255" name="nom" nullable="true" collection="false"/>
                 <field type="DOUBLE" length="255" name="chargeJours" nullable="true" collection="false"/>
                 <field type="BOOLEAN" length="255" name="executed" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="executionOrder" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>

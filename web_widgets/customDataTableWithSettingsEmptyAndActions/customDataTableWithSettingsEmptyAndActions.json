@@ -1,0 +1,148 @@
+{
+  "designerVersion" : "1.4.26",
+  "id" : "customDataTableWithSettingsEmptyAndActions",
+  "name" : "DataTableWithSettingsEmptyAndActions",
+  "lastUpdate" : 1543922930714,
+  "template" : "<div class=\"table-responsive\">\r\n    <table bonitable\r\n           sort-options=\"ctrl.sortOptions\"\r\n           on-sort=\"ctrl.sortHandler()\"\r\n           class=\"table table-striped\" ng-class=\"{'table-hover': ctrl.isSelectable()}\">\r\n        <thead>\r\n            <tr>\r\n                <th colspan=\"{{ properties.headers.length + 1 }}\">\r\n                    <div class=\"bo-TableSettings pull-right\" dropdown>\r\n                          <button type=\"button\"\r\n                            ng-disabled=\"ctrl.loading\"\r\n                            ng-if=\"properties.type === 'Bonita API'\"\r\n                            ng-click=\"ctrl.refreshAPIURL()\"\r\n                            class=\"btn btn-default\">\r\n                            <span ng-show=\"ctrl.loading\">\r\n                                <i class=\"glyphicon glyphicon-refresh spinning\"></i>\r\n                            </span>\r\n                            <span ng-show=\"!ctrl.loading\">\r\n                                <i class=\"glyphicon glyphicon-refresh\"></i>\r\n                            </span>\r\n                          </button>\r\n                          <select\r\n                                class=\"btn btn-default\"\r\n                                ng-model=\"ctrl.pageSize\"\r\n                                ng-disabled=\"ctrl.loading\"\r\n                                ng-options=\"option as option for option in properties.pageSizes\">\r\n                          </select>\r\n                          <button dropdown-toggle type=\"button\"\r\n                            class=\"btn btn-default bo-Settings dropdown-toggle\"\r\n                            ng-disabled=\"ctrl.results.length === 0\"\r\n                            aria-labelledby=\"aria-tablesettings\">\r\n                            <i class=\"glyphicon glyphicon-cog\"></i>\r\n                          </button>\r\n                          <div class=\"bo-TableSettings-content dropdown-menu pull-right\" role=\"menu\" aria-labelledby=\"aria-tablesettings\">\r\n                            <ul class=\"bo-TableSettings-columns bo-Text-disableSelection\" as-sortable=\"sortableOptions\" ng-model=\"ctrl.columns\">\r\n                              <li  ng-repeat=\"field in ctrl.columns\" as-sortable-item>\r\n                                  <div as-sortable-item-handle ng>\r\n                                      <label\r\n                                        class=\"bo-TableSettings-column\"\r\n                                        title=\"{{((field.visible ? 'Hide' : 'Show') +' '+ field['name']) | translate}}\"\r\n                                        ng-click=\"$event.stopPropagation()\">\r\n                                        <span class=\"glyphicon glyphicon-align-justify grabHover\"></span>\r\n                                        <span class=\"glyphicon glyphicon-align-justify grabHover\"></span>\r\n                                        <input type=\"checkbox\" ng-model=\"field['visible']\" ng-change=\"ctrl.updateVisibility({field:field})\">\r\n                                        {{::field['name']}}\r\n                                      </label>\r\n                                  </div>\r\n                              </li>\r\n                            </ul>\r\n                          </div>\r\n                    </div>\r\n                </th>\r\n            </tr>\r\n            <tr>\r\n                <th ng-repeat=\"header in properties.headers\" ng-if=\"ctrl.isVisible($index)\">\r\n                    <div ng-if=\"ctrl.isColumnSortable($index)\" bo-sorter=\"{{properties.columnsKey[$index]}}\">\r\n                            {{ header.label | uiTranslate }}\r\n                    </div>\r\n                    <div ng-if=\"!ctrl.isColumnSortable($index)\">\r\n                        {{ header.label | uiTranslate }}\r\n                    </div>\r\n                </th>\r\n                <th ng-if=\"ctrl.hasActions()\" data-noresize=\"\" class=\"table-column-xs table-header-actions ng-binding\">Actions</th>\r\n            </tr>\r\n        </thead>\r\n        <tbody ng-if=\"ctrl.hasMultiColumns()\">\r\n        <tr ng-repeat=\"row in ctrl.results\" ng-click=\"ctrl.selectRowHandler(row)\"\r\n            ng-class=\"{'info': (row === properties.selectedRow || (properties.highlightedRows && properties.highlightedRowsProperty && properties.highlightedRows.includes(row[properties.highlightedRowsProperty])))}\">\r\n            <td ng-repeat=\"column in properties.columnsKey track by $index\" ng-if=\"ctrl.isVisible($index)\">\r\n                {{ $eval(column, row) | uiTranslate }}\r\n            </td>\r\n            <td ng-if=\"ctrl.hasActions()\" class=\"application-actions\">\r\n                <a ng-repeat=\"action in properties.actions track by $index\"\r\n                    ng-if=\"!action.disabled(row)\"\r\n                    href=\"{{action.href(row)}}\" \r\n                    target=\"{{action.target(row)}}\" \r\n                    style=\"text-decoration:none\">\r\n                    <button\r\n                            class=\"glyphicon glyphicon-{{action.glyphicon}} btn-action-{{action.name}}\"\r\n                            aria-label=\"{{action.name}}\"\r\n                            title=\"{{action.name}}\"\r\n                            ng-click=\"action.handler(row)\">\r\n                    </button>\r\n                </a>\r\n            </td>\r\n        </tr>\r\n        </tbody>\r\n        <tbody ng-if=\"!ctrl.hasMultiColumns()\">\r\n        <tr ng-repeat=\"row in ctrl.results\" ng-click=\"ctrl.selectRowHandler(row)\"\r\n            ng-class=\"{'info': row === properties.selectedRow}\">\r\n            <td> {{ row | uiTranslate }}</td>\r\n            <td ng-if=\"ctrl.hasActions()\" class=\"application-actions\">\r\n                <button ng-repeat=\"action in properties.actions track by $index\"\r\n                        class=\"glyphicon glyphicon-{{action.glyphicon}} btn-action-{{action.name}}\"\r\n                        aria-label=\"{{action.name}}\"\r\n                        title=\"{{action.name}}\"\r\n                        ng-click=\"action.handler(row)\">\r\n                </button>\r\n            </td>\r\n        </tr>\r\n        </tbody>\r\n    </table>\r\n    <pagination ng-if=\"ctrl.pagination.total > ctrl.pageSize\" total-items=\"ctrl.pagination.total\" items-per-page=\"ctrl.pageSize\" direction-links=\"false\" boundary-links=\"false\"\r\n                ng-model=\"ctrl.pagination.currentPage\" ng-change=\"ctrl.paginationHandler()\"></pagination>\r\n</div>\r\n",
+  "icon" : "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 20'><g><path fill='#868695' d='M36,15v2h11v-2H36z M40,10v2h7v-2H40z M11,10v2h14v-2H11z M3,10v2h3v-2H3z M11,15v2h17v-2H11z M3,15v2h3 v-2H3z'/><path fill='#424251' d='M1,19V1h48v18H1z M0,0v20h50V0H0z'/><path fill='#A7A8B7' d='M1,7v1h7v11h1V8h22v11h1V8h17V7H32V1h-1v6H9V1H8v6H1z'/><path fill='none' stroke='#424251' d='M35,3h12v2H35V3z M11,3h13v2H11V3z M3,3h3v2H3V3z'/></g></svg>",
+  "controller" : "function CustomDataTableWithSettingsEmptyAndActionsCtrl($q, $scope, $http, $log, $filter, $injector, $interpolate) {\r\n\r\n  var vm = this;\r\n  \r\n  this.pageSize = $scope.properties.defaultPageSize ? $scope.properties.pageSizes.find(function(item) { return item + \"\" === \"\" + $scope.properties.defaultPageSize }) : $scope.properties.pageSizes[0];\r\n  \r\n  this.loading = true;\r\n  \r\n  this.updateAPICanceller = undefined;\r\n//   console.log(\"UpdateAPICanceller UNDEFINED because of initialization: \" + JSON.stringify(this.updateAPICanceller));\r\n  \r\n  Object.defineProperty(vm, 'jsonData', {\r\n    'get': function () {\r\n      //undefined for filter expression allows to bypass the null value issue that\r\n      //filters everything\r\n      var data = $filter('filter')(this.data || [], $scope.properties.filter || undefined);\r\n      return $filter('orderBy')(data, vm.sortOptions.property, vm.sortOptions.direction);\r\n    },\r\n    'set': function (data) {\r\n      this.data = data;\r\n    }\r\n  });\r\n\r\n  this.sortOptions = {\r\n    property: ($scope.properties.defaultSortColumn ? $scope.properties.defaultSortColumn : ($scope.properties.sortColumns || [])[0]),\r\n    direction: ($scope.properties.defaultSortOrder ? $scope.properties.defaultSortOrder === 'DESC' : false)\r\n  };\r\n  \r\n  this.pagination = {\r\n    currentPage: 1,\r\n    total: 0\r\n  };\r\n  \r\n  this.columns = $scope.properties.headers.map(function(header) {\r\n      return {\r\n        name: $interpolate('{{ header.label | uiTranslate }}')({ header: header }),\r\n        visible: header.visible\r\n      };\r\n  });\r\n\r\n  /**\r\n   * helper methods\r\n   */\r\n  this.hasMultiColumns = function () {\r\n    return Array.isArray($scope.properties.columnsKey);\r\n  };\r\n\r\n  this.isSelectable = function () {\r\n    return $scope.properties.isBound('selectedRow');\r\n  };\r\n\r\n  this.hasActions = function () {\r\n    return $scope.properties.isBound('actions');\r\n  };\r\n\r\n  /**\r\n   * Create a request object following $http(request)\r\n   * @return {Object} a request Object\r\n   */\r\n  this.createRequest = function () {\r\n    var params = {\r\n      c: this.pageSize,\r\n      p: this.pagination.currentPage - 1 || 0,\r\n      s: $scope.properties.filter\r\n    };\r\n\r\n    if (this.sortOptions.property) {\r\n      params.o = this.sortOptions.property + ' ' + (this.sortOptions.direction ? 'DESC' : 'ASC');\r\n    }\r\n    return {\r\n      url: this.removeHandledParams($scope.properties.apiUrl),\r\n      transformResponse: $http.defaults.transformResponse.concat(transformResponse),\r\n      params: angular.extend({}, $scope.properties.params || {}, params),\r\n      timeout: this.updateAPICanceller.promise\r\n    };\r\n  };\r\n\r\n  this.removeHandledParams = function(url) {\r\n    return ['c', 'p'].reduce(\r\n      function(acc, param) {\r\n        //we cannot use pbDataTable because the widget build (probably mustache) replace it\r\n        // with the widget name...\r\n        return acc.replace(new RegExp('(&' + param + '=[^&#]*([&#])?)', 'g'), '$2').replace(new RegExp('[?]' + param + '=[^&#]*&?', 'g'), '?');\r\n      },\r\n      url || '');\r\n  };\r\n\r\n  this.refreshAPIURL = function () {\r\n    $scope.properties.refreshTimestamp = new Date();\r\n    $scope.properties.selectedRow = undefined;\r\n  }\r\n\r\n  /**\r\n   *  Fire request and update results and pagination\r\n   */\r\n  this.updateResultsFromAPI = function () {\r\n    if($scope.properties.apiUrl) {\r\n      // If there is an update already running, cancel it\r\n      if(this.updateAPICanceller) {\r\n        // console.log(\"UpdateAPICanceller USED: \" + JSON.stringify(this.updateAPICanceller));\r\n        this.updateAPICanceller.resolve(\"Another update has to been requested\")\r\n      } else {\r\n        // console.log(\"UpdateAPICanceller NOT USED: \" + JSON.stringify(this.updateAPICanceller));\r\n      }\r\n      \r\n      // Create a brand new canceller\r\n      this.updateAPICanceller = $q.defer();\r\n    //   console.log(\"UpdateAPICanceller NEW: \" + JSON.stringify(this.updateAPICanceller));\r\n      \r\n      $http(vm.createRequest())\r\n        .then(function (response) {\r\n          vm.results = response.data.results;\r\n          vm.pagination = response.data.pagination;\r\n          vm.updateIsEmpty();\r\n          vm.loading = false;\r\n          vm.updateAPICanceller = undefined;\r\n        //   console.log(\"UpdateAPICanceller UNDEFINED because of success: \" + JSON.stringify(this.updateAPICanceller));\r\n        })\r\n        .catch(function (error) {\r\n          vm.updateIsEmpty();\r\n          vm.loading = false;\r\n          vm.updateAPICanceller - undefined;\r\n        //   console.log(\"UpdateAPICanceller UNDEFINED because of failure: \" + JSON.stringify(this.updateAPICanceller));\r\n          $log.error(error);\r\n        });\r\n    }\r\n  };\r\n  \r\n  this.updateIsEmpty = function() {\r\n    if(Array.isArray(vm.results) && vm.results.length > 0) {\r\n        $scope.properties.isEmpty = false;\r\n    } else {\r\n        $scope.properties.isEmpty = true;\r\n    }\r\n  };\r\n\r\n  this.updateResultsFromJson = function () {\r\n    var start = (vm.pagination.currentPage - 1) * vm.pageSize;\r\n    var end = vm.pagination.currentPage * vm.pageSize;\r\n    vm.results = vm.jsonData.slice(start, end);\r\n    vm.updateIsEmpty();\r\n    vm.loading = false;\r\n  };\r\n\r\n\r\n  this.sortHandler = function () {\r\n    this.updateResults();\r\n  };\r\n\r\n  this.paginationHandler = function () {\r\n    this.updateResults();\r\n  };\r\n\r\n  this.selectRowHandler = function (row) {\r\n    if (this.isSelectable()) {\r\n      $scope.properties.selectedRow = row;\r\n    }\r\n  };\r\n\r\n  this.isColumnSortable = function(index) {\r\n    return $scope.properties.type === 'Variable' ||\r\n      (angular.isArray($scope.properties.sortColumns) &&\r\n        $scope.properties.sortColumns.indexOf($scope.properties.columnsKey[index]) > -1);\r\n  };\r\n\r\n  function transformResponse(data, header) {\r\n    return {\r\n      results: data,\r\n      pagination: parseContentRange(header('Content-Range'))\r\n    };\r\n  }\r\n\r\n  /**\r\n   * helper method which extract pagination data from Content-range HTTP header\r\n   * @param  {String} strContentRange Content-Range value\r\n   * @return {Object}                 object containing pagination\r\n   */\r\n  function parseContentRange(strContentRange) {\r\n    if (strContentRange === null) {\r\n      return {};\r\n    }\r\n    var arrayContentRange = strContentRange.split('/');\r\n    var arrayIndexNumPerPage = arrayContentRange[0].split('-');\r\n    return {\r\n      total: parseInt(arrayContentRange[1], 10),\r\n      currentPage: parseInt(arrayIndexNumPerPage[0], 10) + 1\r\n    };\r\n  }\r\n\r\n  vm.updateResults = function () {\r\n    vm.loading = true;\r\n      \r\n    if ($scope.properties.type === 'Variable') {\r\n      vm.updateResultsFromJson();\r\n    } else {\r\n      vm.updateResultsFromAPI();\r\n    }\r\n  };\r\n\r\n  //watchGroup does not support object equality so we use another way to monitor all at once\r\n  $scope.$watch('[properties.refreshTimestamp, ctrl.pageSize, properties.apiUrl, properties.filter, properties.params]', resetPaginationAndUpdateResults, true);\r\n\r\n  function resetPaginationAndUpdateResults() {\r\n    vm.pagination = {\r\n      currentPage: 1,\r\n      total: vm.jsonData.length\r\n    };\r\n    vm.updateResults();\r\n  }\r\n\r\n  $scope.$watchCollection('properties.content', function (data) {\r\n    if (!Array.isArray(data)) {\r\n      return;\r\n    }\r\n    vm.jsonData = data;\r\n    vm.pagination = {\r\n      currentPage: 1,\r\n      total: data.length\r\n    };\r\n    vm.updateResults();\r\n  });\r\n  \r\n  this.isVisible = function(index) {\r\n    return angular.isArray(vm.columns) && vm.columns[index].visible;\r\n  };\r\n}\r\n",
+  "description" : "Table with pagination and filtering capabilities",
+  "custom" : true,
+  "order" : 16,
+  "properties" : [ {
+    "label" : "Headers",
+    "name" : "headers",
+    "caption" : "Comma-separated list",
+    "help" : "If you specify an expression, the result must be an array of strings",
+    "type" : "collection",
+    "defaultValue" : [ ],
+    "bond" : "expression"
+  }, {
+    "label" : "Data source",
+    "name" : "type",
+    "help" : "Variable for frontend paging and ordering or Bonita REST API URL for backend paging and ordering",
+    "type" : "choice",
+    "defaultValue" : "Bonita API",
+    "choiceValues" : [ "Variable", "Bonita API" ],
+    "bond" : "constant"
+  }, {
+    "label" : "URL",
+    "name" : "apiUrl",
+    "caption" : "A Bonita BPM REST API URL",
+    "showFor" : "properties.type.value === 'Bonita API'",
+    "type" : "text",
+    "defaultValue" : "../API/",
+    "bond" : "expression"
+  }, {
+    "label" : "API request parameters",
+    "name" : "params",
+    "help" : "Additional request parameters added to the query string",
+    "showFor" : "properties.type.value === 'Bonita API'",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Content",
+    "name" : "content",
+    "help" : "Array used to populate the table. Can be a list of objects. Use 'Column keys' to refine content",
+    "showFor" : "properties.type.value === 'Variable'",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Columns key",
+    "name" : "columnsKey",
+    "caption" : "Comma-separated list",
+    "help" : "When 'Content' is a list of objects, specifies the attributes to display in the table columns",
+    "type" : "collection",
+    "bond" : "expression"
+  }, {
+    "label" : "Sortable columns",
+    "name" : "sortColumns",
+    "caption" : "List from column keys",
+    "help" : "BDM APIs are not yet sortable. For other APIs, test in the preview or refer to the BonitaBPM documentation 'REST API' pages",
+    "showFor" : "properties.type.value === 'Bonita API'",
+    "type" : "collection",
+    "bond" : "expression"
+  }, {
+    "label" : "Selected Row",
+    "name" : "selectedRow",
+    "type" : "text",
+    "bond" : "variable"
+  }, {
+    "label" : "Default Page size",
+    "name" : "defaultPageSize",
+    "type" : "integer",
+    "defaultValue" : 5,
+    "bond" : "expression"
+  }, {
+    "label" : "Filter",
+    "name" : "filter",
+    "help" : "Bind to a Variable to filter the table 'Content'",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Actions",
+    "name" : "actions",
+    "caption" : "A JSON collection of action descriptions",
+    "help" : "Each action contains a name, glyphicon, service, method and key/value arguments",
+    "type" : "text",
+    "bond" : "variable"
+  }, {
+    "label" : "Is empty",
+    "name" : "isEmpty",
+    "type" : "text",
+    "bond" : "variable"
+  }, {
+    "label" : "Highlighted rows",
+    "name" : "highlightedRows",
+    "type" : "collection",
+    "bond" : "expression"
+  }, {
+    "label" : "Highlighted rows property",
+    "name" : "highlightedRowsProperty",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Default sort column",
+    "name" : "defaultSortColumn",
+    "type" : "text",
+    "bond" : "expression"
+  }, {
+    "label" : "Default sort order",
+    "name" : "defaultSortOrder",
+    "type" : "text",
+    "defaultValue" : "ASC",
+    "bond" : "expression"
+  }, {
+    "label" : "Page Sizes",
+    "name" : "pageSizes",
+    "type" : "collection",
+    "defaultValue" : [ "2", "5", "10", "20", "50" ],
+    "bond" : "expression"
+  } ],
+  "assets" : [ {
+    "name" : "bonita-lib-tpl-0.5.21.js",
+    "type" : "js",
+    "order" : 0,
+    "external" : false
+  }, {
+    "name" : "bonita-lib-0.5.21.css",
+    "type" : "css",
+    "order" : 1,
+    "external" : false
+  }, {
+    "id" : "55d10f79-e0ac-4670-8633-77c16efc61a7",
+    "name" : "table-settings.css",
+    "type" : "css",
+    "order" : 0,
+    "external" : false
+  }, {
+    "id" : "78d5bc23-df8d-499b-88a0-41400647e14e",
+    "name" : "ui-bootstrap-tpls-0.13.0.min.js",
+    "type" : "js",
+    "order" : 2,
+    "external" : false
+  } ],
+  "requiredModules" : [ "org.bonitasoft.templates", "ui.bootstrap.pagination", "template/pagination/pagination.html", "org.bonitasoft.bonitable", "org.bonitasoft.bonitable.sortable", "org.bonitasoft.bonitable.settings" ],
+  "type" : "widget",
+  "hasHelp" : false
+}

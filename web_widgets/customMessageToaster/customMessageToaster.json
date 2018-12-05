@@ -1,0 +1,38 @@
+{
+  "designerVersion" : "1.3.25",
+  "id" : "customMessageToaster",
+  "name" : "MessageToaster",
+  "lastUpdate" : 1543922930721,
+  "template" : "<toaster-container toaster-options=\"{{properties.options}}\"></toaster-container>",
+  "controller" : "// Wrap of the module developed here http://ngmodules.org/modules/AngularJS-Toaster\nfunction ($scope, toaster) {\n    $scope.$watchCollection('properties.toasters', function (data) {\n        if (!Array.isArray(data)) {\n            return;\n        }\n        \n        if(data.length > 0) {\n            var toast = data.shift();\n            console.log(toast);\n            toaster.pop(\n                (toast.type ? toast.type : \"none\"), \n                (toast.title ? toast.title : \"Default title\"), \n                (toast.text ? toast.text : \"Default text\"), \n                (toast.timeout ? toast.timeout : undefined), \n                toast.textType\n            );\n        }\n    });\n}",
+  "custom" : true,
+  "properties" : [ {
+    "label" : "Options",
+    "name" : "options",
+    "help" : "Toaster options",
+    "type" : "text",
+    "defaultValue" : "{\"time-out\": 3000}",
+    "bond" : "expression"
+  }, {
+    "label" : "Toasters",
+    "name" : "toasters",
+    "type" : "text",
+    "bond" : "variable"
+  } ],
+  "assets" : [ {
+    "id" : "a9e32260-118b-4adb-b4c6-f47d7530c01a",
+    "name" : "toaster.min.js",
+    "type" : "js",
+    "order" : 1,
+    "external" : false
+  }, {
+    "id" : "67ae83dc-a227-4435-b9f9-fb6b8c48b894",
+    "name" : "toaster.min.css",
+    "type" : "css",
+    "order" : 2,
+    "external" : false
+  } ],
+  "requiredModules" : [ "toaster" ],
+  "type" : "widget",
+  "hasHelp" : false
+}

@@ -2,7 +2,7 @@
   "designerVersion" : "1.7.69",
   "id" : "createNewProject",
   "name" : "createNewProject",
-  "lastUpdate" : 1543598581073,
+  "lastUpdate" : 1543916261434,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -3861,8 +3861,81 @@
                                   "dimension" : {
                                     "xs" : 12,
                                     "sm" : 12,
-                                    "md" : 11,
-                                    "lg" : 6
+                                    "md" : 2,
+                                    "lg" : 2
+                                  },
+                                  "propertyValues" : {
+                                    "cssClasses" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "hidden" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "required" : {
+                                      "type" : "constant",
+                                      "value" : true
+                                    },
+                                    "minLength" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "maxLength" : {
+                                      "type" : "constant",
+                                      "value" : ""
+                                    },
+                                    "readOnly" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "labelHidden" : {
+                                      "type" : "constant",
+                                      "value" : false
+                                    },
+                                    "label" : {
+                                      "type" : "interpolation",
+                                      "value" : "Order"
+                                    },
+                                    "labelPosition" : {
+                                      "type" : "constant",
+                                      "value" : "top"
+                                    },
+                                    "labelWidth" : {
+                                      "type" : "constant",
+                                      "value" : 4
+                                    },
+                                    "placeholder" : {
+                                      "type" : "interpolation"
+                                    },
+                                    "value" : {
+                                      "type" : "variable",
+                                      "value" : "$item.executionOrder"
+                                    },
+                                    "type" : {
+                                      "type" : "constant",
+                                      "value" : "number"
+                                    },
+                                    "min" : {
+                                      "type" : "constant"
+                                    },
+                                    "max" : {
+                                      "type" : "constant"
+                                    },
+                                    "step" : {
+                                      "type" : "constant",
+                                      "value" : 1
+                                    }
+                                  },
+                                  "reference" : "acbbd15b-e032-4b1d-8270-88b9a6fbbfc0",
+                                  "id" : "pbInput"
+                                }, {
+                                  "type" : "component",
+                                  "dimension" : {
+                                    "xs" : 12,
+                                    "sm" : 12,
+                                    "md" : 9,
+                                    "lg" : 9
                                   },
                                   "propertyValues" : {
                                     "cssClasses" : {
@@ -3926,7 +3999,7 @@
                                     "md" : 1,
                                     "sm" : 12,
                                     "xs" : 12,
-                                    "lg" : 6
+                                    "lg" : 1
                                   },
                                   "propertyValues" : {
                                     "removeItem" : {
@@ -4397,7 +4470,7 @@
       },
       "hidden" : {
         "type" : "constant",
-        "value" : false
+        "value" : true
       },
       "allowHTML" : {
         "type" : "constant",
@@ -4432,7 +4505,7 @@
   "data" : {
     "formInput" : {
       "type" : "json",
-      "value" : "{\r\n  \"projectInput\" : {\r\n    \"definition\" : \"\",\r\n    \"designation\" : \"\",\r\n    \"responsable\" : \"\",\r\n    \"demandeur\" : \"\",\r\n    \"centreProfit\" : \"\",\r\n    \"dateDebut\" : null,\r\n    \"dateFin\" : null,\r\n    \"typeProject\" : \"\",\r\n    \"configurations\" : [ ]\r\n  }\r\n}",
+      "value" : "{\r\n  \"projectInput\": {\r\n    \"definition\": \"asd\",\r\n    \"designation\": \"asd\",\r\n    \"responsable\": \"asd\",\r\n    \"demandeur\": {\r\n      \"persistenceId\": 4,\r\n      \"persistenceId_string\": \"4\",\r\n      \"persistenceVersion\": 0,\r\n      \"persistenceVersion_string\": \"0\",\r\n      \"name\": \"00000002\",\r\n      \"valueDefault\": \"JC DECAUX PORTUGAL\",\r\n      \"valueAlternative\": \"marc.etienne@jcdecaux.com\",\r\n      \"project\": \"POC\",\r\n      \"list\": \"list_Demandeur\",\r\n      \"orderPosition\": 0,\r\n      \"enabled\": true\r\n    },\r\n    \"centreProfit\": \"C066S1084\",\r\n    \"dateDebut\": \"2018-12-03T00:00:00.000Z\",\r\n    \"dateFin\": \"2018-12-06T00:00:00.000Z\",\r\n    \"typeProject\": \"05\",\r\n    \"configurations\": [\r\n      {\r\n        \"codeConfiguration\": \"asd\",\r\n        \"designation\": \"asd\",\r\n        \"codeNewDev\": \"asd\",\r\n        \"qteConfiguration\": 1,\r\n        \"montantNewDev\": \"ads\",\r\n        \"codeMobilier\": \"asd\",\r\n        \"noCommande\": \"asd\",\r\n        \"produits\": \"ABRIBUS\",\r\n        \"activiteMarketing\": \"Airport\",\r\n        \"typeConfiguration\": \"Non Publicitaire\",\r\n        \"enviroment\": \"Indoor\",\r\n        \"digital\": true,\r\n        \"soixantDix\": false,\r\n        \"quatreVingts\": false,\r\n        \"versionBudget\": \"1\",\r\n        \"budgetMatiere\": 2,\r\n        \"budgetEtude\": 2,\r\n        \"equipeProjet\": [\r\n          {\r\n            \"codeRole\": \"Z3\",\r\n            \"designationRole\": \"\",\r\n            \"utilisateurSAP\": \"LAPORTE\",\r\n            \"nomRole\": \"\",\r\n            \"adresseEmail\": \"\"\r\n          },\r\n          {\r\n            \"codeRole\": \"Z0\",\r\n            \"designationRole\": \"\",\r\n            \"utilisateurSAP\": \"ETIENNEM\",\r\n            \"nomRole\": \"\",\r\n            \"adresseEmail\": \"\"\r\n          }\r\n        ],\r\n        \"activities\": [],\r\n        \"activiteEtudeGeneral\": true,\r\n        \"sousEnsembles\": [\r\n          {\r\n            \"codeSousEnsemble\": \"1\",\r\n            \"designation\": \"1\",\r\n            \"activities\": [\r\n              {\r\n                \"nomActivite\": \"\",\r\n                \"executionOrder\": 1,\r\n                \"codeActivite\": \"D\",\r\n                \"typeActivite\": \"\",\r\n                \"sousActivities\": [\r\n                  {\r\n                    \"code\": \"MECA_LP1\",\r\n                    \"nom\": \"\",\r\n                    \"executionOrder\": 11,\r\n                    \"chargeJours\": 0\r\n                  },\r\n                  {\r\n                    \"code\": \"LP_SOFTE\",\r\n                    \"nom\": \"\",\r\n                    \"executionOrder\": 12,\r\n                    \"chargeJours\": 0\r\n                  }\r\n                ]\r\n              },\r\n              {\r\n                \"nomActivite\": \"\",\r\n                \"executionOrder\": 2,\r\n                \"codeActivite\": \"K\",\r\n                \"typeActivite\": \"\",\r\n                \"sousActivities\": []\r\n              }\r\n            ]\r\n          },\r\n          {\r\n            \"codeSousEnsemble\": \"3\",\r\n            \"designation\": \"123\",\r\n            \"activities\": [\r\n              {\r\n                \"nomActivite\": \"\",\r\n                \"executionOrder\": 3,\r\n                \"codeActivite\": \"H\",\r\n                \"typeActivite\": \"\",\r\n                \"sousActivities\": []\r\n              }\r\n            ]\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  }\r\n}",
       "exposed" : false
     },
     "formOutput" : {

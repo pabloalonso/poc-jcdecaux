@@ -2,7 +2,7 @@
   "designerVersion" : "1.7.69",
   "id" : "createNewProjectv4",
   "name" : "createNewProjectv4",
-  "lastUpdate" : 1544006057378,
+  "lastUpdate" : 1544016011410,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -605,9 +605,9 @@
           } ], [ {
             "type" : "component",
             "dimension" : {
-              "md" : 6,
-              "sm" : 12,
               "xs" : 12,
+              "sm" : 12,
+              "md" : 6,
               "lg" : 6
             },
             "propertyValues" : {
@@ -615,25 +615,13 @@
                 "type" : "constant",
                 "value" : ""
               },
-              "widgetId" : {
+              "hidden" : {
                 "type" : "constant",
-                "value" : "pbInput"
+                "value" : false
               },
-              "isDisplayed" : {
+              "disabled" : {
                 "type" : "constant",
-                "value" : true
-              },
-              "labelWidth" : {
-                "type" : "constant",
-                "value" : 1
-              },
-              "label" : {
-                "type" : "interpolation",
-                "value" : "Responsable"
-              },
-              "type" : {
-                "type" : "constant",
-                "value" : "text"
+                "value" : false
               },
               "required" : {
                 "type" : "constant",
@@ -643,62 +631,41 @@
                 "type" : "constant",
                 "value" : false
               },
-              "readonly" : {
-                "type" : "constant",
-                "value" : false
+              "label" : {
+                "type" : "interpolation",
+                "value" : "Responsable"
               },
               "labelPosition" : {
                 "type" : "constant",
                 "value" : "top"
               },
+              "labelWidth" : {
+                "type" : "constant",
+                "value" : 4
+              },
               "placeholder" : {
-                "type" : "constant"
+                "type" : "interpolation",
+                "value" : "Select an option"
               },
-              "alignment" : {
-                "type" : "constant",
-                "value" : "left"
+              "availableValues" : {
+                "type" : "expression",
+                "value" : "ext_responsable.responsables"
               },
-              "class" : {
+              "displayedKey" : {
                 "type" : "constant",
-                "value" : "org.bonitasoft.web.designer.experimental.parametrizedWidget.InputWidget"
+                "value" : "key+\"  - \" +  value"
               },
-              "dimension" : {
+              "returnedKey" : {
                 "type" : "constant",
-                "value" : 12
+                "value" : "key"
               },
               "value" : {
                 "type" : "variable",
                 "value" : "formInput.projectInput.responsable"
-              },
-              "hidden" : {
-                "type" : "constant",
-                "value" : false
-              },
-              "minLength" : {
-                "type" : "constant",
-                "value" : ""
-              },
-              "maxLength" : {
-                "type" : "constant",
-                "value" : ""
-              },
-              "readOnly" : {
-                "type" : "constant",
-                "value" : false
-              },
-              "min" : {
-                "type" : "constant"
-              },
-              "max" : {
-                "type" : "constant"
-              },
-              "step" : {
-                "type" : "constant",
-                "value" : 1
               }
             },
-            "reference" : "c2d9f6aa-6432-438a-beaf-54492082e7f1",
-            "id" : "pbInput"
+            "reference" : "13455002-1cd9-420e-8015-e8924060698c",
+            "id" : "pbSelect"
           }, {
             "type" : "component",
             "dimension" : {
@@ -5003,13 +4970,13 @@
       "exposed" : false
     },
     "ext_responsable" : {
-      "type" : "json",
-      "value" : "{\"responsables\":[{\"value\":\"BE - CARTRON\",\"key\":\"00000101\"},{\"value\":\"BE - LEPAGE\",\"key\":\"00000102\"},{\"value\":\"BE - FORESTIER\",\"key\":\"00000103\"},{\"value\":\"BE - PBERNARD\",\"key\":\"00000104\"},{\"value\":\"BE - MAES\",\"key\":\"00000105\"},{\"value\":\"BE - EVRARD\",\"key\":\"00000106\"},{\"value\":\"BE - DAUDET\",\"key\":\"00000107\"},{\"value\":\"BE - CBERNARD\",\"key\":\"00000108\"},{\"value\":\"BE - DAVET\",\"key\":\"00000109\"},{\"value\":\"BE - ZEFERINO\",\"key\":\"00000201\"},{\"value\":\"BE - LEMANCEL\",\"key\":\"00000202\"},{\"value\":\"BE - THIBLIER\",\"key\":\"00000203\"},{\"value\":\"BE - PEYRUSAUBES\",\"key\":\"00000204\"},{\"value\":\"BE - FROYE\",\"key\":\"00000205\"},{\"value\":\"BE - SAMSON\",\"key\":\"00000206\"},{\"value\":\"BE - TROUILLARD\",\"key\":\"00000207\"},{\"value\":\"BE - CALLE\",\"key\":\"00000208\"},{\"value\":\"BE - MARION\",\"key\":\"00000209\"},{\"value\":\"BE - LAAOUISSID\",\"key\":\"00000210\"},{\"value\":\"BE - MONEYRON\",\"key\":\"00000211\"},{\"value\":\"BE - CAMPOY\",\"key\":\"00000212\"},{\"value\":\"BE - AMSTOUTZ\",\"key\":\"00000213\"},{\"value\":\"BE - TAVERNIER\",\"key\":\"00000214\"},{\"value\":\"BE - SIMON\",\"key\":\"00000216\"},{\"value\":\"BE - CATELLE\",\"key\":\"00000217\"},{\"value\":\"BE - KAGAN\",\"key\":\"00000218\"},{\"value\":\"BE - DARRAS\",\"key\":\"00000219\"},{\"value\":\"BE - KWARTNIK - SUPP\",\"key\":\"00000220\"},{\"value\":\"BE - PORNIN\",\"key\":\"00000221\"},{\"value\":\"BE - FARRUGIA\",\"key\":\"00000222\"},{\"value\":\"BE - RENARD\",\"key\":\"00000223\"},{\"value\":\"BE - VERGNES\",\"key\":\"00000224\"},{\"value\":\"BE - HAYE\",\"key\":\"00000225\"},{\"value\":\"BE - WOLF\",\"key\":\"00000226\"},{\"value\":\"BE - MAILLOU\",\"key\":\"00000227\"},{\"value\":\"BE - MOREL\",\"key\":\"00000228\"},{\"value\":\"BE - AUGUSTYN\",\"key\":\"00000229\"},{\"value\":\"BE - IZARD\",\"key\":\"00000230\"},{\"value\":\"BE - GAZAGNE\",\"key\":\"00000231\"},{\"value\":\"BE - GALLAIS\",\"key\":\"00000232\"},{\"value\":\"BE - GOURARI\",\"key\":\"00000233\"},{\"value\":\"BE - WONGERMEZ\",\"key\":\"00000234\"},{\"value\":\"DAG - CHAMIEH\",\"key\":\"00000301\"},{\"value\":\"DAG - CHAVAND\",\"key\":\"00000302\"},{\"value\":\"DAG - COLOOS\",\"key\":\"00000303\"},{\"value\":\"DAG - GILLARD\",\"key\":\"00000304\"},{\"value\":\"DAG - GUILLOT\",\"key\":\"00000305\"},{\"value\":\"DAG - NIFFLE\",\"key\":\"00000306\"},{\"value\":\"DAG - LARRAY\",\"key\":\"00000307\"},{\"value\":\"DAG - MARTINEZ\",\"key\":\"00000308\"},{\"value\":\"DAG - MARTIGINIAT\",\"key\":\"00000309\"},{\"value\":\"DAG - RIOU\",\"key\":\"00000310\"},{\"value\":\"DPJ - DORP\",\"key\":\"00000401\"},{\"value\":\"DPJ - NIKOLOV\",\"key\":\"00000402\"},{\"value\":\"DPJ - BON\",\"key\":\"00000403\"},{\"value\":\"DPJ - GROUX\",\"key\":\"00000404\"},{\"value\":\"DPJ - LEMAITRE\",\"key\":\"00000405\"},{\"value\":\"DPJ - D'HALLUIN\",\"key\":\"00000406\"},{\"value\":\"DPJ - PUVIS\",\"key\":\"00000407\"},{\"value\":\"DPJ - APRETNA\",\"key\":\"00000408\"},{\"value\":\"DPJ - DUTRIEUX\",\"key\":\"00000409\"},{\"value\":\"DPJ - MARTIN\",\"key\":\"00000410\"},{\"value\":\"DPJ - THIERY\",\"key\":\"00000411\"},{\"value\":\"DPJ - FIZE\",\"key\":\"00000412\"},{\"value\":\"DPJ \\u2013 LECONTE\",\"key\":\"00000413\"},{\"value\":\"DPJ - TAVERNIER\",\"key\":\"00000414\"},{\"value\":\"INN - DELARUE\",\"key\":\"00000501\"},{\"value\":\"INN - MOREL\",\"key\":\"00000503\"},{\"value\":\"INN - GARSON\",\"key\":\"00000504\"},{\"value\":\"INN - GUILLO\",\"key\":\"00000508\"},{\"value\":\"INN - CARRENO\",\"key\":\"00000511\"},{\"value\":\"INN - VIE LE SAGE\",\"key\":\"00000512\"},{\"value\":\"INN - De RUFFRAY\",\"key\":\"00000513\"},{\"value\":\"PP - CADIOU\",\"key\":\"00000601\"},{\"value\":\"PP - BARTHES\",\"key\":\"00000602\"},{\"value\":\"PP - MOREL\",\"key\":\"00000603\"},{\"value\":\"PP - COUTIN\",\"key\":\"00000604\"},{\"value\":\"Ne pas utiliser\",\"key\":\"00000605\"},{\"value\":\"SC - SARESANI\",\"key\":\"00000701\"},{\"value\":\"SC- HINARD\",\"key\":\"00000702\"},{\"value\":\"SC- DELAUNAY\",\"key\":\"00000703\"},{\"value\":\"SC- CHEVALME\",\"key\":\"00000704\"},{\"value\":\"SC - BOUT\",\"key\":\"00000705\"},{\"value\":\"SC - GIRARD PETIT\",\"key\":\"00000706\"},{\"value\":\"DOA - BARRE\",\"key\":\"00000801\"}],\"message\":\"Success\"}",
+      "type" : "url",
+      "value" : "../API/extension/getResponsablesFromSap?p=0&c=3",
       "exposed" : false
     },
     "exp_tost" : {
       "type" : "expression",
-      "value" : "\nif($data.ext_responsable && $data.ext_responsable.message && $data.ext_responsable.message!== \"Success\"){\n    var toast={};\n    toast.type = \"danger\"; \n    toast.title = \"SAP connection\", \n    toast.text =\"SAP connection did not work\"    \n    $data.temp.toasters.push(toast)\n    $data.ext_responsable.message = \"Error handled\"\n}\n",
+      "value" : "\nif($data.ext_responsable && $data.ext_responsable.message && $data.ext_responsable.message!== \"Success\"){\n    var toast={};\n    toast.type = \"error\"; \n    toast.title = \"SAP connection\", \n    toast.text =\"SAP connection did not work\"    \n    $data.temp.toasters.push(toast)\n    $data.ext_responsable.message = \"Success\"\n}\n",
       "exposed" : false
     }
   },

@@ -2,7 +2,7 @@
   "designerVersion" : "1.7.69",
   "id" : "createNewProjectv4",
   "name" : "createNewProjectv4",
-  "lastUpdate" : 1544016011410,
+  "lastUpdate" : 1544031722160,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -327,6 +327,78 @@
           },
           "reference" : "a591fa53-96e4-4ecb-9fe9-a1e47ff05ec7",
           "id" : "pbButton"
+        } ], [ {
+          "type" : "component",
+          "dimension" : {
+            "xs" : 12,
+            "sm" : 12,
+            "md" : 12,
+            "lg" : 12
+          },
+          "propertyValues" : {
+            "cssClasses" : {
+              "type" : "constant",
+              "value" : ""
+            },
+            "hidden" : {
+              "type" : "constant",
+              "value" : false
+            },
+            "disabled" : {
+              "type" : "constant",
+              "value" : false
+            },
+            "label" : {
+              "type" : "interpolation",
+              "value" : "Recuperer template"
+            },
+            "alignment" : {
+              "type" : "constant",
+              "value" : "center"
+            },
+            "buttonStyle" : {
+              "type" : "constant",
+              "value" : "warning"
+            },
+            "action" : {
+              "type" : "constant",
+              "value" : "Add to collection"
+            },
+            "url" : {
+              "type" : "interpolation"
+            },
+            "dataToSend" : {
+              "type" : "constant"
+            },
+            "dataFromSuccess" : {
+              "type" : "variable",
+              "value" : ""
+            },
+            "dataFromError" : {
+              "type" : "variable",
+              "value" : ""
+            },
+            "targetUrlOnSuccess" : {
+              "type" : "interpolation"
+            },
+            "collectionToModify" : {
+              "type" : "variable",
+              "value" : "temp.template"
+            },
+            "collectionPosition" : {
+              "type" : "constant",
+              "value" : "Last"
+            },
+            "valueToAdd" : {
+              "type" : "expression",
+              "value" : "exp_sousEnsembles.setTemplate()"
+            },
+            "removeItem" : {
+              "type" : "variable"
+            }
+          },
+          "reference" : "4ef745c7-aae0-4683-bb65-d8b9067e865f",
+          "id" : "pbButton"
         } ] ]
       }, {
         "type" : "container",
@@ -625,70 +697,6 @@
               },
               "required" : {
                 "type" : "constant",
-                "value" : true
-              },
-              "labelHidden" : {
-                "type" : "constant",
-                "value" : false
-              },
-              "label" : {
-                "type" : "interpolation",
-                "value" : "Responsable"
-              },
-              "labelPosition" : {
-                "type" : "constant",
-                "value" : "top"
-              },
-              "labelWidth" : {
-                "type" : "constant",
-                "value" : 4
-              },
-              "placeholder" : {
-                "type" : "interpolation",
-                "value" : "Select an option"
-              },
-              "availableValues" : {
-                "type" : "expression",
-                "value" : "ext_responsable.responsables"
-              },
-              "displayedKey" : {
-                "type" : "constant",
-                "value" : "key+\"  - \" +  value"
-              },
-              "returnedKey" : {
-                "type" : "constant",
-                "value" : "key"
-              },
-              "value" : {
-                "type" : "variable",
-                "value" : "formInput.projectInput.responsable"
-              }
-            },
-            "reference" : "13455002-1cd9-420e-8015-e8924060698c",
-            "id" : "pbSelect"
-          }, {
-            "type" : "component",
-            "dimension" : {
-              "xs" : 12,
-              "sm" : 12,
-              "md" : 6,
-              "lg" : 6
-            },
-            "propertyValues" : {
-              "cssClasses" : {
-                "type" : "constant",
-                "value" : ""
-              },
-              "hidden" : {
-                "type" : "constant",
-                "value" : false
-              },
-              "disabled" : {
-                "type" : "constant",
-                "value" : false
-              },
-              "required" : {
-                "type" : "constant",
                 "value" : false
               },
               "labelHidden" : {
@@ -730,6 +738,68 @@
             },
             "reference" : "800bdd03-201e-43cb-97f0-ed1cfa1c06b0",
             "id" : "pbSelect"
+          }, {
+            "type" : "component",
+            "dimension" : {
+              "xs" : 12,
+              "sm" : 12,
+              "md" : 6,
+              "lg" : 6
+            },
+            "propertyValues" : {
+              "cssClasses" : {
+                "type" : "constant",
+                "value" : ""
+              },
+              "hidden" : {
+                "type" : "constant",
+                "value" : false
+              },
+              "disabled" : {
+                "type" : "constant",
+                "value" : false
+              },
+              "required" : {
+                "type" : "constant",
+                "value" : true
+              },
+              "labelHidden" : {
+                "type" : "constant",
+                "value" : false
+              },
+              "label" : {
+                "type" : "interpolation",
+                "value" : "Responsable"
+              },
+              "labelPosition" : {
+                "type" : "constant",
+                "value" : "top"
+              },
+              "labelWidth" : {
+                "type" : "constant",
+                "value" : 4
+              },
+              "placeholder" : {
+                "type" : "interpolation",
+                "value" : "Select an option"
+              },
+              "availableValues" : {
+                "type" : "expression",
+                "value" : "ext_responsable"
+              },
+              "displayedKey" : {
+                "type" : "constant"
+              },
+              "returnedKey" : {
+                "type" : "constant"
+              },
+              "value" : {
+                "type" : "variable",
+                "value" : "formInput.projectInput.responsable"
+              }
+            },
+            "reference" : "7e05e148-729a-4e46-a878-f768c7bb551a",
+            "id" : "pbSelect"
           } ], [ {
             "type" : "component",
             "dimension" : {
@@ -753,7 +823,7 @@
               },
               "required" : {
                 "type" : "constant",
-                "value" : false
+                "value" : true
               },
               "labelHidden" : {
                 "type" : "constant",
@@ -817,7 +887,7 @@
               },
               "required" : {
                 "type" : "constant",
-                "value" : false
+                "value" : true
               },
               "labelHidden" : {
                 "type" : "constant",
@@ -2000,7 +2070,7 @@
                         },
                         "required" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : true
                         },
                         "labelHidden" : {
                           "type" : "constant",
@@ -2064,7 +2134,7 @@
                         },
                         "required" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : true
                         },
                         "labelHidden" : {
                           "type" : "constant",
@@ -2128,7 +2198,7 @@
                         },
                         "required" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : true
                         },
                         "labelHidden" : {
                           "type" : "constant",
@@ -2192,7 +2262,7 @@
                         },
                         "required" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : true
                         },
                         "labelHidden" : {
                           "type" : "constant",
@@ -2879,7 +2949,7 @@
                         },
                         "required" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : true
                         },
                         "labelHidden" : {
                           "type" : "constant",
@@ -2943,7 +3013,7 @@
                         },
                         "required" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : true
                         },
                         "labelHidden" : {
                           "type" : "constant",
@@ -3617,7 +3687,7 @@
                               },
                               "required" : {
                                 "type" : "constant",
-                                "value" : false
+                                "value" : true
                               },
                               "minLength" : {
                                 "type" : "constant",
@@ -3690,7 +3760,7 @@
                               },
                               "required" : {
                                 "type" : "constant",
-                                "value" : false
+                                "value" : true
                               },
                               "minLength" : {
                                 "type" : "constant",
@@ -4039,7 +4109,7 @@
                                 },
                                 "required" : {
                                   "type" : "constant",
-                                  "value" : false
+                                  "value" : true
                                 },
                                 "labelHidden" : {
                                   "type" : "constant",
@@ -4456,7 +4526,7 @@
                                       },
                                       "required" : {
                                         "type" : "constant",
-                                        "value" : false
+                                        "value" : true
                                       },
                                       "labelHidden" : {
                                         "type" : "constant",
@@ -4872,7 +4942,7 @@
   "data" : {
     "formInput" : {
       "type" : "json",
-      "value" : "{\r\n  \"projectInput\": {\r\n    \"definition\": \"asd\",\r\n    \"designation\": \"asd\",\r\n    \"responsable\": \"asd\",\r\n    \"demandeur\": \"00000002\",\r\n    \"centreProfit\": \"C066S1084\",\r\n    \"dateDebut\": \"2018-12-03T00:00:00.000Z\",\r\n    \"dateFin\": \"2018-12-06T00:00:00.000Z\",\r\n    \"typeProject\": \"05\",\r\n    \"configurations\": [\r\n      {\r\n        \"codeConfiguration\": \"asd\",\r\n        \"designation\": \"asd\",\r\n        \"codeNewDev\": \"asd\",\r\n        \"qteConfiguration\": 1,\r\n        \"montantNewDev\": \"ads\",\r\n        \"codeMobilier\": \"asd\",\r\n        \"noCommande\": \"asd\",\r\n        \"produits\": \"ABRIBUS\",\r\n        \"activiteMarketing\": \"Airport\",\r\n        \"typeConfiguration\": \"Non Publicitaire\",\r\n        \"enviroment\": \"Indoor\",\r\n        \"digital\": true,\r\n        \"soixantDix\": false,\r\n        \"quatreVingts\": false,\r\n        \"versionBudget\": \"1\",\r\n        \"budgetMatiere\": 2,\r\n        \"budgetEtude\": 2,\r\n        \"equipeProjet\": [\r\n          {\r\n            \"codeRole\": \"Z3\",\r\n            \"designationRole\": \"\",\r\n            \"utilisateurSAP\": \"LAPORTE\",\r\n            \"nomRole\": \"\",\r\n            \"adresseEmail\": \"\"\r\n          },\r\n          {\r\n            \"codeRole\": \"Z0\",\r\n            \"designationRole\": \"\",\r\n            \"utilisateurSAP\": \"ETIENNEM\",\r\n            \"nomRole\": \"\",\r\n            \"adresseEmail\": \"\"\r\n          }\r\n        ],\r\n        \"activities\": [],\r\n        \"activiteEtudeGeneral\": true,\r\n        \"sousEnsembles\": [\r\n          {\r\n            \"codeSousEnsemble\": \"1\",\r\n            \"designation\": \"1\",\r\n            \"activities\": [\r\n              {\r\n                \"nomActivite\": \"Etudes détaillées\",\r\n                \"executionOrder\": 1,\r\n                \"codeActivite\": \"D\",\r\n                \"typeActivite\": \"\",\r\n                \"sousActivities\": [\r\n                  {\r\n                    \"code\": \"MECA_LP1\",\r\n                    \"nom\": \"Etudes Mécaniques LP1\",\r\n                    \"executionOrder\": 11,\r\n                    \"chargeJours\": 0\r\n                  },\r\n                  {\r\n                    \"code\": \"LP_SOFTE\",\r\n                    \"nom\": \"Etudes logiciels Embarqués\",\r\n                    \"executionOrder\": 12,\r\n                    \"chargeJours\": 0\r\n                  }\r\n                ]\r\n              },\r\n              {\r\n                \"nomActivite\": \"Indus.- Prod. - Appro. Latest\",\r\n                \"executionOrder\": 2,\r\n                \"codeActivite\": \"K\",\r\n                \"typeActivite\": \"\",\r\n                \"sousActivities\": []\r\n              }\r\n            ]\r\n          },\r\n          {\r\n            \"codeSousEnsemble\": \"3\",\r\n            \"designation\": \"123\",\r\n            \"activities\": [\r\n              {\r\n                \"nomActivite\": \"Livraison 1st\",\r\n                \"executionOrder\": 3,\r\n                \"codeActivite\": \"H\",\r\n                \"typeActivite\": \"\",\r\n                \"sousActivities\": []\r\n              }\r\n            ]\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  }\r\n}",
+      "value" : "{\r\n  \"projectInput\": {\r\n    \"definition\": \"\",\r\n    \"designation\": \"\",\r\n    \"responsable\": \"\",\r\n    \"demandeur\": \"\",\r\n    \"centreProfit\": \"\",\r\n    \"dateDebut\": \"\",\r\n    \"dateFin\": \"\",\r\n    \"typeProject\": \"\",\r\n    \"configurations\": [    ]\r\n  }\r\n}",
       "exposed" : false
     },
     "formOutput" : {
@@ -4942,7 +5012,7 @@
     },
     "temp" : {
       "type" : "json",
-      "value" : "{\n    \"selected\":{\"name\":\"project\"},\n    \"toasters\":[]\n    \n}",
+      "value" : "{\n    \"selected\":{\"name\":\"project\"},\n    \"toasters\":[],\n    \"template\":[]   \n}",
       "exposed" : false
     },
     "exp_pills" : {
@@ -4956,7 +5026,7 @@
     },
     "exp_sousEnsembles" : {
       "type" : "expression",
-      "value" : "return {\n    getPills:function(conf){\n        var pills = []\n        if(conf.sousEnsembles && conf.sousEnsembles.length>0){\n            var count = 0;\n            conf.sousEnsembles.forEach(function(item){\n                pills.push({\"name\":\"se\"+count, \"displayName\":\"Sous-Ensemble \"+count,\"displayDesc\":item.designation})\n                count++;\n            })\n        }\n        return pills;\n    }\n}",
+      "value" : "return {\n    getPills:function(conf){\n        var pills = []\n        if(conf.sousEnsembles && conf.sousEnsembles.length>0){\n            var count = 0;\n            conf.sousEnsembles.forEach(function(item){\n                pills.push({\"name\":\"se\"+count, \"displayName\":\"Sous-Ensemble \"+count,\"displayDesc\":item.designation})\n                count++;\n            })\n        }\n        return pills;\n    },\n    setTemplate:function(){\n        $data.formInput = angular.copy($data.template)\n    }\n}",
       "exposed" : false
     },
     "mod_listActivites" : {
@@ -4970,13 +5040,18 @@
       "exposed" : false
     },
     "ext_responsable" : {
-      "type" : "url",
-      "value" : "../API/extension/getResponsablesFromSap?p=0&c=3",
+      "type" : "json",
+      "value" : "{\"responsables\":[{\"value\":\"BE - CARTRON\",\"key\":\"00000101\"},{\"value\":\"BE - LEPAGE\",\"key\":\"00000102\"},{\"value\":\"BE - FORESTIER\",\"key\":\"00000103\"},{\"value\":\"BE - PBERNARD\",\"key\":\"00000104\"},{\"value\":\"BE - MAES\",\"key\":\"00000105\"},{\"value\":\"BE - EVRARD\",\"key\":\"00000106\"},{\"value\":\"BE - DAUDET\",\"key\":\"00000107\"},{\"value\":\"BE - CBERNARD\",\"key\":\"00000108\"},{\"value\":\"BE - DAVET\",\"key\":\"00000109\"},{\"value\":\"BE - ZEFERINO\",\"key\":\"00000201\"},{\"value\":\"BE - LEMANCEL\",\"key\":\"00000202\"},{\"value\":\"BE - THIBLIER\",\"key\":\"00000203\"},{\"value\":\"BE - PEYRUSAUBES\",\"key\":\"00000204\"},{\"value\":\"BE - FROYE\",\"key\":\"00000205\"},{\"value\":\"BE - SAMSON\",\"key\":\"00000206\"},{\"value\":\"BE - TROUILLARD\",\"key\":\"00000207\"},{\"value\":\"BE - CALLE\",\"key\":\"00000208\"},{\"value\":\"BE - MARION\",\"key\":\"00000209\"},{\"value\":\"BE - LAAOUISSID\",\"key\":\"00000210\"},{\"value\":\"BE - MONEYRON\",\"key\":\"00000211\"},{\"value\":\"BE - CAMPOY\",\"key\":\"00000212\"},{\"value\":\"BE - AMSTOUTZ\",\"key\":\"00000213\"},{\"value\":\"BE - TAVERNIER\",\"key\":\"00000214\"},{\"value\":\"BE - SIMON\",\"key\":\"00000216\"},{\"value\":\"BE - CATELLE\",\"key\":\"00000217\"},{\"value\":\"BE - KAGAN\",\"key\":\"00000218\"},{\"value\":\"BE - DARRAS\",\"key\":\"00000219\"},{\"value\":\"BE - KWARTNIK - SUPP\",\"key\":\"00000220\"},{\"value\":\"BE - PORNIN\",\"key\":\"00000221\"},{\"value\":\"BE - FARRUGIA\",\"key\":\"00000222\"},{\"value\":\"BE - RENARD\",\"key\":\"00000223\"},{\"value\":\"BE - VERGNES\",\"key\":\"00000224\"},{\"value\":\"BE - HAYE\",\"key\":\"00000225\"},{\"value\":\"BE - WOLF\",\"key\":\"00000226\"},{\"value\":\"BE - MAILLOU\",\"key\":\"00000227\"},{\"value\":\"BE - MOREL\",\"key\":\"00000228\"},{\"value\":\"BE - AUGUSTYN\",\"key\":\"00000229\"},{\"value\":\"BE - IZARD\",\"key\":\"00000230\"},{\"value\":\"BE - GAZAGNE\",\"key\":\"00000231\"},{\"value\":\"BE - GALLAIS\",\"key\":\"00000232\"},{\"value\":\"BE - GOURARI\",\"key\":\"00000233\"},{\"value\":\"BE - WONGERMEZ\",\"key\":\"00000234\"},{\"value\":\"DAG - CHAMIEH\",\"key\":\"00000301\"},{\"value\":\"DAG - CHAVAND\",\"key\":\"00000302\"},{\"value\":\"DAG - COLOOS\",\"key\":\"00000303\"},{\"value\":\"DAG - GILLARD\",\"key\":\"00000304\"},{\"value\":\"DAG - GUILLOT\",\"key\":\"00000305\"},{\"value\":\"DAG - NIFFLE\",\"key\":\"00000306\"},{\"value\":\"DAG - LARRAY\",\"key\":\"00000307\"},{\"value\":\"DAG - MARTINEZ\",\"key\":\"00000308\"},{\"value\":\"DAG - MARTIGINIAT\",\"key\":\"00000309\"},{\"value\":\"DAG - RIOU\",\"key\":\"00000310\"},{\"value\":\"DPJ - DORP\",\"key\":\"00000401\"},{\"value\":\"DPJ - NIKOLOV\",\"key\":\"00000402\"},{\"value\":\"DPJ - BON\",\"key\":\"00000403\"},{\"value\":\"DPJ - GROUX\",\"key\":\"00000404\"},{\"value\":\"DPJ - LEMAITRE\",\"key\":\"00000405\"},{\"value\":\"DPJ - D'HALLUIN\",\"key\":\"00000406\"},{\"value\":\"DPJ - PUVIS\",\"key\":\"00000407\"},{\"value\":\"DPJ - APRETNA\",\"key\":\"00000408\"},{\"value\":\"DPJ - DUTRIEUX\",\"key\":\"00000409\"},{\"value\":\"DPJ - MARTIN\",\"key\":\"00000410\"},{\"value\":\"DPJ - THIERY\",\"key\":\"00000411\"},{\"value\":\"DPJ - FIZE\",\"key\":\"00000412\"},{\"value\":\"DPJ \\u2013 LECONTE\",\"key\":\"00000413\"},{\"value\":\"DPJ - TAVERNIER\",\"key\":\"00000414\"},{\"value\":\"INN - DELARUE\",\"key\":\"00000501\"},{\"value\":\"INN - MOREL\",\"key\":\"00000503\"},{\"value\":\"INN - GARSON\",\"key\":\"00000504\"},{\"value\":\"INN - GUILLO\",\"key\":\"00000508\"},{\"value\":\"INN - CARRENO\",\"key\":\"00000511\"},{\"value\":\"INN - VIE LE SAGE\",\"key\":\"00000512\"},{\"value\":\"INN - De RUFFRAY\",\"key\":\"00000513\"},{\"value\":\"PP - CADIOU\",\"key\":\"00000601\"},{\"value\":\"PP - BARTHES\",\"key\":\"00000602\"},{\"value\":\"PP - MOREL\",\"key\":\"00000603\"},{\"value\":\"PP - COUTIN\",\"key\":\"00000604\"},{\"value\":\"Ne pas utiliser\",\"key\":\"00000605\"},{\"value\":\"SC - SARESANI\",\"key\":\"00000701\"},{\"value\":\"SC- HINARD\",\"key\":\"00000702\"},{\"value\":\"SC- DELAUNAY\",\"key\":\"00000703\"},{\"value\":\"SC- CHEVALME\",\"key\":\"00000704\"},{\"value\":\"SC - BOUT\",\"key\":\"00000705\"},{\"value\":\"SC - GIRARD PETIT\",\"key\":\"00000706\"},{\"value\":\"DOA - BARRE\",\"key\":\"00000801\"}],\"message\":\"Success\"}",
       "exposed" : false
     },
     "exp_tost" : {
       "type" : "expression",
-      "value" : "\nif($data.ext_responsable && $data.ext_responsable.message && $data.ext_responsable.message!== \"Success\"){\n    var toast={};\n    toast.type = \"error\"; \n    toast.title = \"SAP connection\", \n    toast.text =\"SAP connection did not work\"    \n    $data.temp.toasters.push(toast)\n    $data.ext_responsable.message = \"Success\"\n}\n",
+      "value" : "\nif($data.ext_responsable && $data.ext_responsable.message && $data.ext_responsable.message!== \"Success\"){\n    var toast={};\n    toast.type = \"danger\"; \n    toast.title = \"SAP connection\", \n    toast.text =\"SAP connection did not work\"    \n    $data.temp.toasters.push(toast)\n    $data.ext_responsable.message = \"Success\"\n}\n",
+      "exposed" : false
+    },
+    "template" : {
+      "type" : "json",
+      "value" : "{\r\n  \"projectInput\": {\r\n    \"definition\": \"NG17-0509-SA-040\",\r\n    \"designation\": \"Project designation\",\r\n    \"responsable\": \"asd\",\r\n    \"demandeur\": \"00000002\",\r\n    \"centreProfit\": \"C066S1084\",\r\n    \"dateDebut\": \"2018-12-14T00:00:00.000Z\",\r\n    \"dateFin\": \"2018-12-29T00:00:00.000Z\",\r\n    \"typeProject\": \"02\",\r\n    \"configurations\": [\r\n      {\r\n        \"codeConfiguration\": \"NG17-0509-SA-040-01\",\r\n        \"designation\": \"configuration 0\",\r\n        \"codeNewDev\": \"1\",\r\n        \"qteConfiguration\": 21,\r\n        \"montantNewDev\": \"1.000.000€\",\r\n        \"codeMobilier\": \"33\",\r\n        \"noCommande\": \"111233--FF-44\",\r\n        \"produits\": \"ABRIBUS\",\r\n        \"activiteMarketing\": \"Grand Format\",\r\n        \"typeConfiguration\": \"Publicitaire\",\r\n        \"enviroment\": \"Indoor\",\r\n        \"digital\": false,\r\n        \"soixantDix\": false,\r\n        \"quatreVingts\": false,\r\n        \"versionBudget\": \"1\",\r\n        \"budgetMatiere\": 0,\r\n        \"budgetEtude\": 0,\r\n        \"equipeProjet\": [\r\n          {\r\n            \"codeRole\": \"Z5\",\r\n            \"designationRole\": \"\",\r\n            \"utilisateurSAP\": \"LAPORTE\",\r\n            \"nomRole\": \"\",\r\n            \"adresseEmail\": \"\"\r\n          },\r\n          {\r\n            \"codeRole\": \"Z4\",\r\n            \"designationRole\": \"\",\r\n            \"utilisateurSAP\": \"CONSTENSOUX\",\r\n            \"nomRole\": \"\",\r\n            \"adresseEmail\": \"\"\r\n          },\r\n          {\r\n            \"codeRole\": \"Z0\",\r\n            \"designationRole\": \"\",\r\n            \"utilisateurSAP\": \"ETIENNEM\",\r\n            \"nomRole\": \"\",\r\n            \"adresseEmail\": \"\"\r\n          }\r\n        ],\r\n        \"activities\": [],\r\n        \"activiteEtudeGeneral\": true,\r\n        \"sousEnsembles\": [\r\n          {\r\n            \"codeSousEnsemble\": \"NG17-0509-SA-040-01-01\",\r\n            \"designation\": \"Sous-ensemble 0\",\r\n            \"activities\": [\r\n              {\r\n                \"nomActivite\": \"Etudes détaillées\",\r\n                \"executionOrder\": 0,\r\n                \"codeActivite\": \"D\",\r\n                \"sousActivities\": [\r\n                  {\r\n                    \"code\": \"MECA_LP2\",\r\n                    \"nom\": \"\",\r\n                    \"chargeJours\": 0,\r\n                    \"executionOrder\": 1\r\n                  },\r\n                  {\r\n                    \"code\": \"LP_DIGI\",\r\n                    \"nom\": \"\",\r\n                    \"chargeJours\": 0,\r\n                    \"executionOrder\": 2\r\n                  },\r\n                  {\r\n                    \"code\": \"LP_HARD\",\r\n                    \"nom\": \"\",\r\n                    \"chargeJours\": 0,\r\n                    \"executionOrder\": 3\r\n                  }\r\n                ]\r\n              },\r\n              {\r\n                \"codeActivite\": \"E\",\r\n                \"nomActivite\": \"Codification\",\r\n                \"executionOrder\": 1\r\n              },\r\n              {\r\n                \"codeActivite\": \"F\",\r\n                \"nomActivite\": \"Sourcing\",\r\n                \"executionOrder\": 2\r\n              },\r\n              {\r\n                \"codeActivite\": \"G\",\r\n                \"nomActivite\": \"Indus. - Prod. - Appro. 1st\",\r\n                \"executionOrder\": 3\r\n              },\r\n              {\r\n                \"codeActivite\": \"H\",\r\n                \"nomActivite\": \"Livraison 1st\",\r\n                \"executionOrder\": 4\r\n              },\r\n              {\r\n                \"nomActivite\": \"Indus.- Prod. - Appro. Latest\",\r\n                \"executionOrder\": 5,\r\n                \"codeActivite\": \"K\"\r\n              },\r\n              {\r\n                \"codeActivite\": \"L\",\r\n                \"nomActivite\": \"Livraison Latest\",\r\n                \"executionOrder\": 6\r\n              }\r\n            ]\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"codeConfiguration\": \"NG17-0509-SA-040-02\",\r\n        \"designation\": \"Configuration 1\",\r\n        \"codeNewDev\": \"33\",\r\n        \"qteConfiguration\": 2,\r\n        \"montantNewDev\": \"22\",\r\n        \"codeMobilier\": \"123133-LL-5\",\r\n        \"noCommande\": \"5588-999-TT\",\r\n        \"produits\": \"BORNE DE  PROPRETE\",\r\n        \"activiteMarketing\": \"Metro\",\r\n        \"typeConfiguration\": \"Non Publicitaire\",\r\n        \"enviroment\": \"Mixte\",\r\n        \"digital\": true,\r\n        \"soixantDix\": true,\r\n        \"quatreVingts\": true,\r\n        \"versionBudget\": \"0\",\r\n        \"budgetMatiere\": 0,\r\n        \"budgetEtude\": 0,\r\n        \"equipeProjet\": [\r\n          {\r\n            \"codeRole\": \"Z5\",\r\n            \"designationRole\": \"\",\r\n            \"utilisateurSAP\": \"LAPORTE\",\r\n            \"nomRole\": \"\",\r\n            \"adresseEmail\": \"\"\r\n          },\r\n          {\r\n            \"codeRole\": \"Z4\",\r\n            \"designationRole\": \"\",\r\n            \"utilisateurSAP\": \"CONSTENSOUX\",\r\n            \"nomRole\": \"\",\r\n            \"adresseEmail\": \"\"\r\n          },\r\n          {\r\n            \"codeRole\": \"Z0\",\r\n            \"designationRole\": \"\",\r\n            \"utilisateurSAP\": \"ETIENNEM\",\r\n            \"nomRole\": \"\",\r\n            \"adresseEmail\": \"\"\r\n          }\r\n        ],\r\n        \"activities\": [],\r\n        \"activiteEtudeGeneral\": false,\r\n        \"sousEnsembles\": [\r\n          {\r\n            \"codeSousEnsemble\": \"NG17-0509-SA-040-02-01\",\r\n            \"designation\": \"Sous ensemble 2\",\r\n            \"activities\": [\r\n              {\r\n                \"nomActivite\": \"Etudes détaillées\",\r\n                \"executionOrder\": 0,\r\n                \"codeActivite\": \"D\"\r\n              },\r\n              {\r\n                \"codeActivite\": \"E\",\r\n                \"nomActivite\": \"Codification\",\r\n                \"executionOrder\": 1\r\n              },\r\n              {\r\n                \"codeActivite\": \"F\",\r\n                \"nomActivite\": \"Sourcing\",\r\n                \"executionOrder\": 2\r\n              },\r\n              {\r\n                \"codeActivite\": \"G\",\r\n                \"nomActivite\": \"Indus. - Prod. - Appro. 1st\",\r\n                \"executionOrder\": 3\r\n              },\r\n              {\r\n                \"codeActivite\": \"H\",\r\n                \"nomActivite\": \"Livraison 1st\",\r\n                \"executionOrder\": 4\r\n              },\r\n              {\r\n                \"nomActivite\": \"Indus.- Prod. - Appro. Latest\",\r\n                \"executionOrder\": 5,\r\n                \"codeActivite\": \"K\"\r\n              },\r\n              {\r\n                \"codeActivite\": \"L\",\r\n                \"nomActivite\": \"Livraison Latest\",\r\n                \"executionOrder\": 6\r\n              }\r\n            ]\r\n          },\r\n          {\r\n            \"codeSousEnsemble\": \"NG17-0509-SA-040-02-02\",\r\n            \"designation\": \"SousEnsemble 3\",\r\n            \"activities\": [\r\n              {\r\n                \"nomActivite\": \"Etudes détaillées\",\r\n                \"executionOrder\": 0,\r\n                \"codeActivite\": \"D\"\r\n              },\r\n              {\r\n                \"codeActivite\": \"E\",\r\n                \"nomActivite\": \"Codification\",\r\n                \"executionOrder\": 1\r\n              },\r\n              {\r\n                \"codeActivite\": \"F\",\r\n                \"nomActivite\": \"Sourcing\",\r\n                \"executionOrder\": 2\r\n              },\r\n              {\r\n                \"codeActivite\": \"G\",\r\n                \"nomActivite\": \"Indus. - Prod. - Appro. 1st\",\r\n                \"executionOrder\": 3\r\n              },\r\n              {\r\n                \"codeActivite\": \"H\",\r\n                \"nomActivite\": \"Livraison 1st\",\r\n                \"executionOrder\": 4\r\n              },\r\n              {\r\n                \"nomActivite\": \"Indus.- Prod. - Appro. Latest\",\r\n                \"executionOrder\": 5,\r\n                \"codeActivite\": \"K\"\r\n              },\r\n              {\r\n                \"codeActivite\": \"L\",\r\n                \"nomActivite\": \"Livraison Latest\",\r\n                \"executionOrder\": 6\r\n              }\r\n            ]\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  }\r\n}",
       "exposed" : false
     }
   },

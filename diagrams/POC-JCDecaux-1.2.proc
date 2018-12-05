@@ -77,6 +77,11 @@
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_dzsFsPh8EeiEOoJeXp4-BQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_dzsFsfh8EeiEOoJeXp4-BQ" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_dzsFsvh8EeiEOoJeXp4-BQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <inputMappings xmi:type="process:InputMapping" xmi:id="_RpccgPiEEeiEOoJeXp4-BQ" subprocessTarget="projectId">
+            <processSource xmi:type="expression:Expression" xmi:id="_RpccgfiEEeiEOoJeXp4-BQ" name="project - Project#getPersistenceId" content="getPersistenceId" interpreter="GROOVY" type="TYPE_JAVA_METHOD_CALL" returnType="java.lang.Long">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_TYdjEPiEEeiEOoJeXp4-BQ" name="project" dataType="_dztTwfh8EeiEOoJeXp4-BQ" className="com.company.model.Project"/>
+            </processSource>
+          </inputMappings>
           <calledActivityName xmi:type="expression:Expression" xmi:id="_dzsFs_h8EeiEOoJeXp4-BQ" name="Modification" content="Modification" returnTypeFixed="true"/>
           <calledActivityVersion xmi:type="expression:Expression" xmi:id="_dzsFtPh8EeiEOoJeXp4-BQ" name="" content="" returnTypeFixed="true"/>
         </elements>
@@ -1051,6 +1056,116 @@
         <dynamicLabel xmi:type="expression:Expression" xmi:id="_dzsuNfh8EeiEOoJeXp4-BQ" name="" content="" returnTypeFixed="true"/>
         <dynamicDescription xmi:type="expression:Expression" xmi:id="_dzsuNvh8EeiEOoJeXp4-BQ" name="" content="" returnTypeFixed="true"/>
         <stepSummary xmi:type="expression:Expression" xmi:id="_dzsuN_h8EeiEOoJeXp4-BQ" name="" content="" returnTypeFixed="true"/>
+        <operations xmi:type="expression:Operation" xmi:id="_ZNTPgPiEEeiEOoJeXp4-BQ">
+          <leftOperand xmi:type="expression:Expression" xmi:id="_ZNTPgfiEEeiEOoJeXp4-BQ" name="project" content="project" type="TYPE_VARIABLE" returnType="com.company.model.Project">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ZNTPgviEEeiEOoJeXp4-BQ" name="project" dataType="_dztTwfh8EeiEOoJeXp4-BQ" className="com.company.model.Project"/>
+          </leftOperand>
+          <rightOperand xmi:type="expression:Expression" xmi:id="_ZNTPg_iEEeiEOoJeXp4-BQ" name="projectInput.definition" content="projectInput.definition" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+            <referencedElements xmi:type="process:ContractInput" xmi:id="_ZNTPhPiEEeiEOoJeXp4-BQ" name="projectInput" type="COMPLEX"/>
+          </rightOperand>
+          <operator xmi:type="expression:Operator" xmi:id="_ZNTPhfiEEeiEOoJeXp4-BQ" type="JAVA_METHOD" expression="setDefinition">
+            <inputTypes>java.lang.String</inputTypes>
+          </operator>
+        </operations>
+        <operations xmi:type="expression:Operation" xmi:id="_ZNTPhviEEeiEOoJeXp4-BQ">
+          <leftOperand xmi:type="expression:Expression" xmi:id="_ZNTPh_iEEeiEOoJeXp4-BQ" name="project" content="project" type="TYPE_VARIABLE" returnType="com.company.model.Project">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ZNTPiPiEEeiEOoJeXp4-BQ" name="project" dataType="_dztTwfh8EeiEOoJeXp4-BQ" className="com.company.model.Project"/>
+          </leftOperand>
+          <rightOperand xmi:type="expression:Expression" xmi:id="_ZNTPifiEEeiEOoJeXp4-BQ" name="projectInput.designation" content="projectInput.designation" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+            <referencedElements xmi:type="process:ContractInput" xmi:id="_ZNTPiviEEeiEOoJeXp4-BQ" name="projectInput" type="COMPLEX"/>
+          </rightOperand>
+          <operator xmi:type="expression:Operator" xmi:id="_ZNTPi_iEEeiEOoJeXp4-BQ" type="JAVA_METHOD" expression="setDesignation">
+            <inputTypes>java.lang.String</inputTypes>
+          </operator>
+        </operations>
+        <operations xmi:type="expression:Operation" xmi:id="_ZNTPjPiEEeiEOoJeXp4-BQ">
+          <leftOperand xmi:type="expression:Expression" xmi:id="_ZNTPjfiEEeiEOoJeXp4-BQ" name="project" content="project" type="TYPE_VARIABLE" returnType="com.company.model.Project">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ZNTPjviEEeiEOoJeXp4-BQ" name="project" dataType="_dztTwfh8EeiEOoJeXp4-BQ" className="com.company.model.Project"/>
+          </leftOperand>
+          <rightOperand xmi:type="expression:Expression" xmi:id="_ZNTPj_iEEeiEOoJeXp4-BQ" name="projectInput.responsable" content="projectInput.responsable" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+            <referencedElements xmi:type="process:ContractInput" xmi:id="_ZNTPkPiEEeiEOoJeXp4-BQ" name="projectInput" type="COMPLEX"/>
+          </rightOperand>
+          <operator xmi:type="expression:Operator" xmi:id="_ZNTPkfiEEeiEOoJeXp4-BQ" type="JAVA_METHOD" expression="setResponsable">
+            <inputTypes>java.lang.String</inputTypes>
+          </operator>
+        </operations>
+        <operations xmi:type="expression:Operation" xmi:id="_ZNTPkviEEeiEOoJeXp4-BQ">
+          <leftOperand xmi:type="expression:Expression" xmi:id="_ZNTPk_iEEeiEOoJeXp4-BQ" name="project" content="project" type="TYPE_VARIABLE" returnType="com.company.model.Project">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ZNTPlPiEEeiEOoJeXp4-BQ" name="project" dataType="_dztTwfh8EeiEOoJeXp4-BQ" className="com.company.model.Project"/>
+          </leftOperand>
+          <rightOperand xmi:type="expression:Expression" xmi:id="_ZNTPlfiEEeiEOoJeXp4-BQ" name="projectInput.demandeur" content="projectInput.demandeur" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+            <referencedElements xmi:type="process:ContractInput" xmi:id="_ZNTPlviEEeiEOoJeXp4-BQ" name="projectInput" type="COMPLEX"/>
+          </rightOperand>
+          <operator xmi:type="expression:Operator" xmi:id="_ZNTPl_iEEeiEOoJeXp4-BQ" type="JAVA_METHOD" expression="setDemandeur">
+            <inputTypes>java.lang.String</inputTypes>
+          </operator>
+        </operations>
+        <operations xmi:type="expression:Operation" xmi:id="_ZNTPmPiEEeiEOoJeXp4-BQ">
+          <leftOperand xmi:type="expression:Expression" xmi:id="_ZNTPmfiEEeiEOoJeXp4-BQ" name="project" content="project" type="TYPE_VARIABLE" returnType="com.company.model.Project">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ZNTPmviEEeiEOoJeXp4-BQ" name="project" dataType="_dztTwfh8EeiEOoJeXp4-BQ" className="com.company.model.Project"/>
+          </leftOperand>
+          <rightOperand xmi:type="expression:Expression" xmi:id="_ZNTPm_iEEeiEOoJeXp4-BQ" name="projectInput.centreProfit" content="projectInput.centreProfit" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+            <referencedElements xmi:type="process:ContractInput" xmi:id="_ZNTPnPiEEeiEOoJeXp4-BQ" name="projectInput" type="COMPLEX"/>
+          </rightOperand>
+          <operator xmi:type="expression:Operator" xmi:id="_ZNTPnfiEEeiEOoJeXp4-BQ" type="JAVA_METHOD" expression="setCentreProfit">
+            <inputTypes>java.lang.String</inputTypes>
+          </operator>
+        </operations>
+        <operations xmi:type="expression:Operation" xmi:id="_ZNTPnviEEeiEOoJeXp4-BQ">
+          <leftOperand xmi:type="expression:Expression" xmi:id="_ZNTPn_iEEeiEOoJeXp4-BQ" name="project" content="project" type="TYPE_VARIABLE" returnType="com.company.model.Project">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ZNTPoPiEEeiEOoJeXp4-BQ" name="project" dataType="_dztTwfh8EeiEOoJeXp4-BQ" className="com.company.model.Project"/>
+          </leftOperand>
+          <rightOperand xmi:type="expression:Expression" xmi:id="_ZNTPofiEEeiEOoJeXp4-BQ" name="projectInput.dateDebut" content="projectInput.dateDebut" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.time.LocalDate">
+            <referencedElements xmi:type="process:ContractInput" xmi:id="_ZNTPoviEEeiEOoJeXp4-BQ" name="projectInput" type="COMPLEX"/>
+          </rightOperand>
+          <operator xmi:type="expression:Operator" xmi:id="_ZNTPo_iEEeiEOoJeXp4-BQ" type="JAVA_METHOD" expression="setDateDebut">
+            <inputTypes>java.time.LocalDate</inputTypes>
+          </operator>
+        </operations>
+        <operations xmi:type="expression:Operation" xmi:id="_ZNTPpPiEEeiEOoJeXp4-BQ">
+          <leftOperand xmi:type="expression:Expression" xmi:id="_ZNTPpfiEEeiEOoJeXp4-BQ" name="project" content="project" type="TYPE_VARIABLE" returnType="com.company.model.Project">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ZNTPpviEEeiEOoJeXp4-BQ" name="project" dataType="_dztTwfh8EeiEOoJeXp4-BQ" className="com.company.model.Project"/>
+          </leftOperand>
+          <rightOperand xmi:type="expression:Expression" xmi:id="_ZNTPp_iEEeiEOoJeXp4-BQ" name="projectInput.dateFin" content="projectInput.dateFin" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.time.LocalDate">
+            <referencedElements xmi:type="process:ContractInput" xmi:id="_ZNTPqPiEEeiEOoJeXp4-BQ" name="projectInput" type="COMPLEX"/>
+          </rightOperand>
+          <operator xmi:type="expression:Operator" xmi:id="_ZNTPqfiEEeiEOoJeXp4-BQ" type="JAVA_METHOD" expression="setDateFin">
+            <inputTypes>java.time.LocalDate</inputTypes>
+          </operator>
+        </operations>
+        <operations xmi:type="expression:Operation" xmi:id="_ZNTPqviEEeiEOoJeXp4-BQ">
+          <leftOperand xmi:type="expression:Expression" xmi:id="_ZNTPq_iEEeiEOoJeXp4-BQ" name="project" content="project" type="TYPE_VARIABLE" returnType="com.company.model.Project">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ZNTPrPiEEeiEOoJeXp4-BQ" name="project" dataType="_dztTwfh8EeiEOoJeXp4-BQ" className="com.company.model.Project"/>
+          </leftOperand>
+          <rightOperand xmi:type="expression:Expression" xmi:id="_ZNTPrfiEEeiEOoJeXp4-BQ" name="projectInput.typeProject" content="projectInput.typeProject" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+            <referencedElements xmi:type="process:ContractInput" xmi:id="_ZNTPrviEEeiEOoJeXp4-BQ" name="projectInput" type="COMPLEX"/>
+          </rightOperand>
+          <operator xmi:type="expression:Operator" xmi:id="_ZNTPr_iEEeiEOoJeXp4-BQ" type="JAVA_METHOD" expression="setTypeProject">
+            <inputTypes>java.lang.String</inputTypes>
+          </operator>
+        </operations>
+        <operations xmi:type="expression:Operation" xmi:id="_ZNTPsPiEEeiEOoJeXp4-BQ">
+          <leftOperand xmi:type="expression:Expression" xmi:id="_ZNTPsfiEEeiEOoJeXp4-BQ" name="project" content="project" type="TYPE_VARIABLE" returnType="com.company.model.Project">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ZNTPsviEEeiEOoJeXp4-BQ" name="project" dataType="_dztTwfh8EeiEOoJeXp4-BQ" className="com.company.model.Project"/>
+          </leftOperand>
+          <rightOperand xmi:type="expression:Expression" xmi:id="_ZNTPs_iEEeiEOoJeXp4-BQ" name="projectInput.configurations" content="def configurationList = []&#xD;&#xA;//Uncomment line below to append existing configurations&#xD;&#xA;//configurationList.addAll(project.configurations)&#xD;&#xA;//For each item collected in multiple input&#xD;&#xA;projectInput.configurations.each{&#xD;&#xA;&#x9;//Add a new composed Configuration instance&#xD;&#xA;&#x9;configurationList.add({ currentConfigurationInput ->&#xD;&#xA;&#x9;&#x9;def configurationVar = new com.company.model.Configuration()&#xD;&#xA;&#x9;&#x9;configurationVar.codeConfiguration = currentConfigurationInput.codeConfiguration&#xD;&#xA;&#x9;&#x9;configurationVar.designation = currentConfigurationInput.designation&#xD;&#xA;&#x9;&#x9;configurationVar.codeNewDev = currentConfigurationInput.codeNewDev&#xD;&#xA;&#x9;&#x9;configurationVar.qteConfiguration = currentConfigurationInput.qteConfiguration&#xD;&#xA;&#x9;&#x9;configurationVar.montantNewDev = currentConfigurationInput.montantNewDev&#xD;&#xA;&#x9;&#x9;configurationVar.codeMobilier = currentConfigurationInput.codeMobilier&#xD;&#xA;&#x9;&#x9;configurationVar.noCommande = currentConfigurationInput.noCommande&#xD;&#xA;&#x9;&#x9;configurationVar.produits = currentConfigurationInput.produits&#xD;&#xA;&#x9;&#x9;configurationVar.activiteMarketing = currentConfigurationInput.activiteMarketing&#xD;&#xA;&#x9;&#x9;configurationVar.typeConfiguration = currentConfigurationInput.typeConfiguration&#xD;&#xA;&#x9;&#x9;configurationVar.enviroment = currentConfigurationInput.enviroment&#xD;&#xA;&#x9;&#x9;configurationVar.digital = currentConfigurationInput.digital&#xD;&#xA;&#x9;&#x9;configurationVar.soixantDix = currentConfigurationInput.soixantDix&#xD;&#xA;&#x9;&#x9;configurationVar.quatreVingts = currentConfigurationInput.quatreVingts&#xD;&#xA;&#x9;&#x9;configurationVar.versionBudget = currentConfigurationInput.versionBudget&#xD;&#xA;&#x9;&#x9;configurationVar.budgetMatiere = currentConfigurationInput.budgetMatiere&#xD;&#xA;&#x9;&#x9;configurationVar.budgetEtude = currentConfigurationInput.budgetEtude&#xD;&#xA;&#x9;&#x9;configurationVar.equipeProjet = {&#xD;&#xA;&#x9;&#x9;&#x9;def membreEquipeList = []&#xD;&#xA;&#x9;&#x9;&#x9;//For each item collected in multiple input&#xD;&#xA;&#x9;&#x9;&#x9;currentConfigurationInput.equipeProjet.each{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;//Add a new composed MembreEquipe instance&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;membreEquipeList.add({ currentMembreEquipeInput ->&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;def membreEquipeVar = new com.company.model.MembreEquipe()&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;membreEquipeVar.codeRole = currentMembreEquipeInput.codeRole&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;membreEquipeVar.designationRole = currentMembreEquipeInput.designationRole&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;membreEquipeVar.utilisateurSAP = currentMembreEquipeInput.utilisateurSAP&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;membreEquipeVar.nomRole = currentMembreEquipeInput.nomRole&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;membreEquipeVar.adresseEmail = currentMembreEquipeInput.adresseEmail&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return membreEquipeVar&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}(it))&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;return membreEquipeList}()&#xD;&#xA;&#x9;&#x9;configurationVar.sousEnsembles = {&#xD;&#xA;&#x9;&#x9;&#x9;def sousEnsembleList = []&#xD;&#xA;&#x9;&#x9;&#x9;//For each item collected in multiple input&#xD;&#xA;&#x9;&#x9;&#x9;currentConfigurationInput.sousEnsembles.each{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;//Add a new composed SousEnsemble instance&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;sousEnsembleList.add({ currentSousEnsembleInput ->&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;def sousEnsembleVar = new com.company.model.SousEnsemble()&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sousEnsembleVar.codeSousEnsemble = currentSousEnsembleInput.codeSousEnsemble&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sousEnsembleVar.designation = currentSousEnsembleInput.designation&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;sousEnsembleVar.activities = {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;def activitieList = []&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;//For each item collected in multiple input&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;currentSousEnsembleInput.activities.each{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;//Add a new composed Activitie instance&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;activitieList.add({ currentActivitieInput ->&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;def activitieVar = new com.company.model.Activitie()&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;activitieVar.nomActivite = currentActivitieInput.nomActivite&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;activitieVar.dureeJours = currentActivitieInput.dureeJours&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;activitieVar.dateFin = currentActivitieInput.dateFin&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;activitieVar.executionOrder = currentActivitieInput.executionOrder&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;activitieVar.codeActivite = currentActivitieInput.codeActivite&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;activitieVar.typeActivite = currentActivitieInput.typeActivite&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;activitieVar.sousActivities = {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;def sousActivitieList = []&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;//For each item collected in multiple input&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;currentActivitieInput.sousActivities.each{&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;//Add a new composed SousActivitie instance&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;sousActivitieList.add({ currentSousActivitieInput ->&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;def sousActivitieVar = new com.company.model.SousActivitie()&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;sousActivitieVar.code = currentSousActivitieInput.code&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;sousActivitieVar.nom = currentSousActivitieInput.nom&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;sousActivitieVar.chargeJours = currentSousActivitieInput.chargeJours&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;sousActivitieVar.executed = currentSousActivitieInput.executed&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;sousActivitieVar.executionOrder = currentSousActivitieInput.executionOrder&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return sousActivitieVar&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}(it))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return sousActivitieList}()&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;activitieVar.executed = currentActivitieInput.executed&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return activitieVar&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}(it))&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return activitieList}()&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return sousEnsembleVar&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}(it))&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;return sousEnsembleList}()&#xD;&#xA;&#x9;&#x9;configurationVar.activiteEtudeGeneral = currentConfigurationInput.activiteEtudeGeneral&#xD;&#xA;&#x9;&#x9;configurationVar.cadrage = {&#xD;&#xA;&#x9;&#x9;&#x9;def cadrageVar = new com.company.model.Cadrage()&#xD;&#xA;&#x9;&#x9;&#x9;cadrageVar.applicantName = currentConfigurationInput.cadrage.applicantName&#xD;&#xA;&#x9;&#x9;&#x9;cadrageVar.dateCadrage = currentConfigurationInput.cadrage.dateCadrage&#xD;&#xA;&#x9;&#x9;&#x9;cadrageVar.buName = currentConfigurationInput.cadrage.buName&#xD;&#xA;&#x9;&#x9;&#x9;cadrageVar.projectCode = currentConfigurationInput.cadrage.projectCode&#xD;&#xA;&#x9;&#x9;&#x9;cadrageVar.projectName = currentConfigurationInput.cadrage.projectName&#xD;&#xA;&#x9;&#x9;&#x9;cadrageVar.subject = currentConfigurationInput.cadrage.subject&#xD;&#xA;&#x9;&#x9;&#x9;cadrageVar.projectManager = currentConfigurationInput.cadrage.projectManager&#xD;&#xA;&#x9;&#x9;&#x9;cadrageVar.costStudies = currentConfigurationInput.cadrage.costStudies&#xD;&#xA;&#x9;&#x9;&#x9;cadrageVar.costPrototype = currentConfigurationInput.cadrage.costPrototype&#xD;&#xA;&#x9;&#x9;&#x9;cadrageVar.costTooling = currentConfigurationInput.cadrage.costTooling&#xD;&#xA;&#x9;&#x9;&#x9;cadrageVar.costDocumentation = currentConfigurationInput.cadrage.costDocumentation&#xD;&#xA;&#x9;&#x9;&#x9;cadrageVar.costOthers = currentConfigurationInput.cadrage.costOthers&#xD;&#xA;&#x9;&#x9;&#x9;return cadrageVar}()&#xD;&#xA;&#x9;&#x9;return configurationVar&#xD;&#xA;&#x9;}(it))&#xD;&#xA;}&#xD;&#xA;return configurationList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+            <referencedElements xmi:type="process:ContractInput" xmi:id="_ZNTPtPiEEeiEOoJeXp4-BQ" name="projectInput" type="COMPLEX"/>
+          </rightOperand>
+          <operator xmi:type="expression:Operator" xmi:id="_ZNTPtfiEEeiEOoJeXp4-BQ" type="JAVA_METHOD" expression="setConfigurations">
+            <inputTypes>java.util.List</inputTypes>
+          </operator>
+        </operations>
+        <operations xmi:type="expression:Operation" xmi:id="_ZNTPtviEEeiEOoJeXp4-BQ">
+          <leftOperand xmi:type="expression:Expression" xmi:id="_ZNTPt_iEEeiEOoJeXp4-BQ" name="project" content="project" type="TYPE_VARIABLE" returnType="com.company.model.Project">
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ZNTPuPiEEeiEOoJeXp4-BQ" name="project" dataType="_dztTwfh8EeiEOoJeXp4-BQ" className="com.company.model.Project"/>
+          </leftOperand>
+          <rightOperand xmi:type="expression:Expression" xmi:id="_ZNTPufiEEeiEOoJeXp4-BQ" name="projectInput.its" content="projectInput.its" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
+            <referencedElements xmi:type="process:ContractInput" xmi:id="_ZNTPuviEEeiEOoJeXp4-BQ" name="projectInput" type="COMPLEX"/>
+          </rightOperand>
+          <operator xmi:type="expression:Operator" xmi:id="_ZNTPu_iEEeiEOoJeXp4-BQ" type="JAVA_METHOD" expression="setIts">
+            <inputTypes>java.lang.Boolean</inputTypes>
+          </operator>
+        </operations>
         <loopCondition xmi:type="expression:Expression" xmi:id="_dzsuOPh8EeiEOoJeXp4-BQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         <loopMaximum xmi:type="expression:Expression" xmi:id="_dzsuOfh8EeiEOoJeXp4-BQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
         <cardinalityExpression xmi:type="expression:Expression" xmi:id="_dzsuOvh8EeiEOoJeXp4-BQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -1059,9 +1174,82 @@
         <entryRedirectionURL xmi:type="expression:Expression" xmi:id="_dzsuPfh8EeiEOoJeXp4-BQ" name="" content="" returnTypeFixed="true"/>
         <confirmationMessage xmi:type="expression:Expression" xmi:id="_dzsuPvh8EeiEOoJeXp4-BQ" name="" content="" returnTypeFixed="true"/>
         <formMapping xmi:type="process:FormMapping" xmi:id="_dzsuP_h8EeiEOoJeXp4-BQ">
-          <targetForm xmi:type="expression:Expression" xmi:id="_xHPLAPiCEeiEOoJeXp4-BQ" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+          <targetForm xmi:type="expression:Expression" xmi:id="_xHPLAPiCEeiEOoJeXp4-BQ" name="ModifyProject" content="b6475c4e-1c7f-42c8-a5cd-7a15169c1bf9" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
         </formMapping>
-        <contract xmi:type="process:Contract" xmi:id="_dzsuQfh8EeiEOoJeXp4-BQ"/>
+        <contract xmi:type="process:Contract" xmi:id="_dzsuQfh8EeiEOoJeXp4-BQ">
+          <inputs xmi:type="process:ContractInput" xmi:id="_ZNSocPiEEeiEOoJeXp4-BQ" name="projectInput" type="COMPLEX">
+            <inputs xmi:type="process:ContractInput" xmi:id="_ZNSocfiEEeiEOoJeXp4-BQ" name="definition"/>
+            <inputs xmi:type="process:ContractInput" xmi:id="_ZNSocviEEeiEOoJeXp4-BQ" name="designation"/>
+            <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoc_iEEeiEOoJeXp4-BQ" name="responsable"/>
+            <inputs xmi:type="process:ContractInput" xmi:id="_ZNSodPiEEeiEOoJeXp4-BQ" name="demandeur"/>
+            <inputs xmi:type="process:ContractInput" xmi:id="_ZNSodfiEEeiEOoJeXp4-BQ" name="centreProfit"/>
+            <inputs xmi:type="process:ContractInput" xmi:id="_ZNSodviEEeiEOoJeXp4-BQ" name="dateDebut" type="LOCALDATE"/>
+            <inputs xmi:type="process:ContractInput" xmi:id="_ZNSod_iEEeiEOoJeXp4-BQ" name="dateFin" type="LOCALDATE"/>
+            <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoePiEEeiEOoJeXp4-BQ" name="typeProject"/>
+            <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoefiEEeiEOoJeXp4-BQ" name="configurations" type="COMPLEX" multiple="true">
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoeviEEeiEOoJeXp4-BQ" name="codeConfiguration"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoe_iEEeiEOoJeXp4-BQ" name="designation"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSofPiEEeiEOoJeXp4-BQ" name="codeNewDev"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoffiEEeiEOoJeXp4-BQ" name="qteConfiguration" type="DECIMAL"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSofviEEeiEOoJeXp4-BQ" name="montantNewDev"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSof_iEEeiEOoJeXp4-BQ" name="codeMobilier"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSogPiEEeiEOoJeXp4-BQ" name="noCommande"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSogfiEEeiEOoJeXp4-BQ" name="produits"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSogviEEeiEOoJeXp4-BQ" name="activiteMarketing"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSog_iEEeiEOoJeXp4-BQ" name="typeConfiguration"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSohPiEEeiEOoJeXp4-BQ" name="enviroment"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSohfiEEeiEOoJeXp4-BQ" name="digital" type="BOOLEAN"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSohviEEeiEOoJeXp4-BQ" name="soixantDix" type="BOOLEAN"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoh_iEEeiEOoJeXp4-BQ" name="quatreVingts" type="BOOLEAN"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoiPiEEeiEOoJeXp4-BQ" name="versionBudget"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoifiEEeiEOoJeXp4-BQ" name="budgetMatiere" type="DECIMAL"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoiviEEeiEOoJeXp4-BQ" name="budgetEtude" type="DECIMAL"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoi_iEEeiEOoJeXp4-BQ" name="equipeProjet" type="COMPLEX" multiple="true">
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSojPiEEeiEOoJeXp4-BQ" name="codeRole"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSojfiEEeiEOoJeXp4-BQ" name="designationRole"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSojviEEeiEOoJeXp4-BQ" name="utilisateurSAP"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoj_iEEeiEOoJeXp4-BQ" name="nomRole"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSokPiEEeiEOoJeXp4-BQ" name="adresseEmail"/>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSokfiEEeiEOoJeXp4-BQ" name="sousEnsembles" type="COMPLEX" multiple="true">
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSokviEEeiEOoJeXp4-BQ" name="codeSousEnsemble"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSok_iEEeiEOoJeXp4-BQ" name="designation"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSolPiEEeiEOoJeXp4-BQ" name="activities" type="COMPLEX" multiple="true">
+                  <inputs xmi:type="process:ContractInput" xmi:id="_ZNSolfiEEeiEOoJeXp4-BQ" name="nomActivite"/>
+                  <inputs xmi:type="process:ContractInput" xmi:id="_ZNSolviEEeiEOoJeXp4-BQ" name="dureeJours" type="DECIMAL"/>
+                  <inputs xmi:type="process:ContractInput" xmi:id="_ZNSol_iEEeiEOoJeXp4-BQ" name="dateFin" type="LOCALDATE"/>
+                  <inputs xmi:type="process:ContractInput" xmi:id="_ZNSomPiEEeiEOoJeXp4-BQ" name="executionOrder" type="INTEGER"/>
+                  <inputs xmi:type="process:ContractInput" xmi:id="_ZNSomfiEEeiEOoJeXp4-BQ" name="codeActivite"/>
+                  <inputs xmi:type="process:ContractInput" xmi:id="_ZNSomviEEeiEOoJeXp4-BQ" name="typeActivite"/>
+                  <inputs xmi:type="process:ContractInput" xmi:id="_ZNSom_iEEeiEOoJeXp4-BQ" name="sousActivities" type="COMPLEX" multiple="true">
+                    <inputs xmi:type="process:ContractInput" xmi:id="_ZNSonPiEEeiEOoJeXp4-BQ" name="code"/>
+                    <inputs xmi:type="process:ContractInput" xmi:id="_ZNSonfiEEeiEOoJeXp4-BQ" name="nom"/>
+                    <inputs xmi:type="process:ContractInput" xmi:id="_ZNSonviEEeiEOoJeXp4-BQ" name="chargeJours" type="DECIMAL"/>
+                    <inputs xmi:type="process:ContractInput" xmi:id="_ZNSon_iEEeiEOoJeXp4-BQ" name="executed" type="BOOLEAN"/>
+                    <inputs xmi:type="process:ContractInput" xmi:id="_ZNSooPiEEeiEOoJeXp4-BQ" name="executionOrder" type="INTEGER"/>
+                  </inputs>
+                  <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoofiEEeiEOoJeXp4-BQ" name="executed" type="BOOLEAN"/>
+                </inputs>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSooviEEeiEOoJeXp4-BQ" name="activiteEtudeGeneral" type="BOOLEAN"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoo_iEEeiEOoJeXp4-BQ" name="cadrage" type="COMPLEX">
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSopPiEEeiEOoJeXp4-BQ" name="applicantName"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSopfiEEeiEOoJeXp4-BQ" name="dateCadrage" type="LOCALDATE"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSopviEEeiEOoJeXp4-BQ" name="buName"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSop_iEEeiEOoJeXp4-BQ" name="projectCode"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoqPiEEeiEOoJeXp4-BQ" name="projectName"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoqfiEEeiEOoJeXp4-BQ" name="subject"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoqviEEeiEOoJeXp4-BQ" name="projectManager"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSoq_iEEeiEOoJeXp4-BQ" name="costStudies" type="DECIMAL"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSorPiEEeiEOoJeXp4-BQ" name="costPrototype" type="DECIMAL"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSorfiEEeiEOoJeXp4-BQ" name="costTooling" type="DECIMAL"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSorviEEeiEOoJeXp4-BQ" name="costDocumentation" type="DECIMAL"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_ZNSor_iEEeiEOoJeXp4-BQ" name="costOthers" type="DECIMAL"/>
+              </inputs>
+            </inputs>
+            <inputs xmi:type="process:ContractInput" xmi:id="_ZNSosPiEEeiEOoJeXp4-BQ" name="its" type="BOOLEAN"/>
+          </inputs>
+        </contract>
         <expectedDuration xmi:type="expression:Expression" xmi:id="_dzsuQvh8EeiEOoJeXp4-BQ" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
       </elements>
       <elements xmi:type="process:EndTerminatedEvent" xmi:id="_dzsuTfh8EeiEOoJeXp4-BQ" name="Fin1" incoming="_dzsuYvh8EeiEOoJeXp4-BQ">
@@ -1083,6 +1271,17 @@
       </elements>
       <mandatorySymbol xmi:type="expression:Expression" xmi:id="_dzsuUvh8EeiEOoJeXp4-BQ" name="" content="" returnTypeFixed="true"/>
       <mandatoryLabel xmi:type="expression:Expression" xmi:id="_dzsuU_h8EeiEOoJeXp4-BQ" name="" content="" returnTypeFixed="true"/>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_XIamoPiEEeiEOoJeXp4-BQ" name="project" dataType="_dztTwfh8EeiEOoJeXp4-BQ" className="com.company.model.Project">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_XIamofiEEeiEOoJeXp4-BQ" name="Project.findByPersistenceId" content="SELECT p&#xA;FROM Project p&#xA;WHERE p.persistenceId= :persistenceId&#xA;" interpreter="GROOVY" type="TYPE_QUERY_BUSINESS_DATA" returnType="com.company.model.Project">
+          <referencedElements xmi:type="expression:Expression" xmi:id="_XIamoviEEeiEOoJeXp4-BQ" name="persistenceId" content="persistenceId" type="QUERY_PARAM_TYPE" returnType="java.lang.Long" returnTypeFixed="true">
+            <referencedElements xmi:type="expression:Expression" xmi:id="_XIamo_iEEeiEOoJeXp4-BQ" name="projectId" content="projectId" type="TYPE_CONTRACT_INPUT" returnType="java.lang.Long" returnTypeFixed="true">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_XIampPiEEeiEOoJeXp4-BQ" name="projectId" type="LONG">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_XIampfiEEeiEOoJeXp4-BQ"/>
+              </referencedElements>
+            </referencedElements>
+          </referencedElements>
+        </defaultValue>
+      </data>
       <entryRedirectionURL xmi:type="expression:Expression" xmi:id="_dzsuVPh8EeiEOoJeXp4-BQ" name="" content="" returnTypeFixed="true"/>
       <confirmationMessage xmi:type="expression:Expression" xmi:id="_dzsuVfh8EeiEOoJeXp4-BQ" name="" content="" returnTypeFixed="true"/>
       <formMapping xmi:type="process:FormMapping" xmi:id="_dzsuVvh8EeiEOoJeXp4-BQ">
@@ -1127,7 +1326,11 @@
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_dzsudPh8EeiEOoJeXp4-BQ" id="VALIDATOR"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_dzsudfh8EeiEOoJeXp4-BQ" id="OTHER"/>
       </configurations>
-      <contract xmi:type="process:Contract" xmi:id="_dzsudvh8EeiEOoJeXp4-BQ"/>
+      <contract xmi:type="process:Contract" xmi:id="_dzsudvh8EeiEOoJeXp4-BQ">
+        <inputs xmi:type="process:ContractInput" xmi:id="_PJFYkPiEEeiEOoJeXp4-BQ" name="projectId" type="LONG">
+          <mapping xmi:type="process:ContractInputMapping" xmi:id="_PJFYkfiEEeiEOoJeXp4-BQ"/>
+        </inputs>
+      </contract>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_dzsud_h8EeiEOoJeXp4-BQ">
         <name xmi:type="expression:Expression" xmi:id="_dzsuePh8EeiEOoJeXp4-BQ" content="" returnTypeFixed="true"/>
         <value xmi:type="expression:Expression" xmi:id="_dzsuefh8EeiEOoJeXp4-BQ" content="" returnTypeFixed="true"/>

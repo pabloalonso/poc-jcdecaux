@@ -2,7 +2,7 @@
   "designerVersion" : "1.7.69",
   "id" : "createNewProjectv4",
   "name" : "createNewProjectv4",
-  "lastUpdate" : 1543997658320,
+  "lastUpdate" : 1544001142748,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -293,7 +293,7 @@
             },
             "valueToAdd" : {
               "type" : "expression",
-              "value" : "{\r\n  \"codeConfiguration\" : \"\",\r\n  \"designation\" : \"\",\r\n  \"codeNewDev\" : \"\",\r\n  \"qteConfiguration\" : 0,\r\n  \"montantNewDev\" : \"\",\r\n  \"codeMobilier\" : \"\",\r\n  \"noCommande\" : \"\",\r\n  \"produits\" : \"\",\r\n  \"activiteMarketing\" : \"\",\r\n  \"typeConfiguration\" : \"\",\r\n  \"enviroment\" : \"\",\r\n  \"digital\" : false,\r\n  \"soixantDix\" : false,\r\n  \"quatreVingts\" : false,\r\n  \"versionBudget\" : \"\",\r\n  \"budgetMatiere\" : 0,\r\n  \"budgetEtude\" : 0,\r\n  \"equipeProjet\" : [ ],\r\n  \"activities\" : [ ]\r\n}"
+              "value" : "clone.conf()"
             },
             "disabled" : {
               "type" : "constant",
@@ -3364,7 +3364,7 @@
                         },
                         "valueToAdd" : {
                           "type" : "expression",
-                          "value" : "{\"codeSousEnsemble\":\"\",\"designation\":\"\",\"activities\":[]}"
+                          "value" : "clone.se()"
                         },
                         "removeItem" : {
                           "type" : "variable"
@@ -4033,7 +4033,7 @@
                                 },
                                 "readOnly" : {
                                   "type" : "constant",
-                                  "value" : false
+                                  "value" : true
                                 },
                                 "min" : {
                                   "type" : "constant"
@@ -4849,7 +4849,7 @@
       },
       "text" : {
         "type" : "interpolation",
-        "value" : "<pre>{{formInput|json}}</pre>"
+        "value" : "<pre>{{formInput | json}}</pre>"
       },
       "alignment" : {
         "type" : "constant",
@@ -4858,6 +4858,34 @@
     },
     "reference" : "b5957d13-21d4-4750-950e-62b7a7c0b8d3",
     "id" : "pbText"
+  } ], [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "options" : {
+        "type" : "constant",
+        "value" : "{\"time-out\": 3000}"
+      },
+      "toasters" : {
+        "type" : "variable",
+        "value" : "temp.toasters"
+      }
+    },
+    "reference" : "8fa4dfbc-a9a5-4b29-87f3-69637685a0f7",
+    "id" : "customMessageToaster"
   } ] ],
   "assets" : [ {
     "id" : "3eeec122-a47a-4e92-96ff-a2b4dfd0f497",
@@ -4946,7 +4974,7 @@
     },
     "temp" : {
       "type" : "json",
-      "value" : "{\n    \"selected\":{\"name\":\"project\"}\n    \n}",
+      "value" : "{\n    \"selected\":{\"name\":\"project\"},\n    \"toasters\":[]\n    \n}",
       "exposed" : false
     },
     "exp_pills" : {
@@ -4966,6 +4994,21 @@
     "mod_listActivites" : {
       "type" : "expression",
       "value" : "\n        if($data.listActivites){\n            var output = [];\n            $data.listActivites.forEach(function(item){\n               // if(!selected.find(x => x.codeActivite === item.name) )\n                    output.push({\"codeActivite\":item.name,\"nomActivite\":item.valueDefault})\n                \n            })\n        return output;\n        }\n",
+      "exposed" : false
+    },
+    "clone" : {
+      "type" : "expression",
+      "value" : "var activities = {\n    \"05\":[],\n    \"02\":[\n  {\n    \"nomActivite\": \"Etudes détaillées\",\n    \"executionOrder\": 0,\n    \"codeActivite\": \"D\"\n  },\n  {\n    \"codeActivite\": \"E\",\n    \"nomActivite\": \"Codification\",\n    \"executionOrder\": 1\n  },\n  {\n    \"codeActivite\": \"F\",\n    \"nomActivite\": \"Sourcing\",\n    \"executionOrder\": 2\n  },\n  {\n    \"codeActivite\": \"G\",\n    \"nomActivite\": \"Indus. - Prod. - Appro. 1st\",\n    \"executionOrder\": 3\n  },\n  {\n    \"codeActivite\": \"H\",\n    \"nomActivite\": \"Livraison 1st\",\n    \"executionOrder\": 4\n  },\n  {\n    \"nomActivite\": \"Indus.- Prod. - Appro. Latest\",\n    \"executionOrder\": 5,\n    \"codeActivite\": \"K\"\n  },\n  {\n    \"codeActivite\": \"L\",\n    \"nomActivite\": \"Livraison Latest\",\n    \"executionOrder\": 6\n  }\n],\n    \"01\":[\n  {\n    \"codeActivite\": \"E\",\n    \"nomActivite\": \"Codification\",\n    \"executionOrder\": 1\n  },\n  {\n    \"codeActivite\": \"F\",\n    \"nomActivite\": \"Sourcing\",\n    \"executionOrder\": 2\n  },\n  {\n    \"codeActivite\": \"G\",\n    \"nomActivite\": \"Indus. - Prod. - Appro. 1st\",\n    \"executionOrder\": 3\n  },\n  {\n    \"codeActivite\": \"H\",\n    \"nomActivite\": \"Livraison 1st\",\n    \"executionOrder\": 4\n  },\n  {\n    \"nomActivite\": \"Indus.- Prod. - Appro. Latest\",\n    \"executionOrder\": 5,\n    \"codeActivite\": \"K\"\n  },\n  {\n    \"codeActivite\": \"L\",\n    \"nomActivite\": \"Livraison Latest\",\n    \"executionOrder\": 6\n  }\n]\n}\n\nvar etudeGeneral = {\n    \"05\":false,\n    \"02\":true,\n    \"01\":false\n}\n\nreturn {\n    \"conf\":function(){\n        var newConf = {  \"codeConfiguration\" : \"\",  \"designation\" : \"\",  \"codeNewDev\" : \"\",  \"qteConfiguration\" : 0,  \"montantNewDev\" : \"\",  \"codeMobilier\" : \"\",  \"noCommande\" : \"\",  \"produits\" : \"\",  \"activiteMarketing\" : \"\",  \"typeConfiguration\" : \"\",  \"enviroment\" : \"\",  \"digital\" : false,  \"soixantDix\" : false,  \"quatreVingts\" : false,  \"versionBudget\" : \"\",  \"budgetMatiere\" : 0,  \"budgetEtude\" : 0,  \"equipeProjet\" : [ ],  \"activities\" : [ ]};\n        if($data.formInput.projectInput.configurations && $data.formInput.projectInput.configurations.length>0){\n            var conf = $data.formInput.projectInput.configurations[0];\n            if(conf.equipeProjet && conf.equipeProjet.length>0){\n                newConf.equipeProjet = angular.copy(conf.equipeProjet);\n            }\n        }\n        \n        if($data.formInput.projectInput.typeProject){\n            newConf.activiteEtudeGeneral = etudeGeneral[$data.formInput.projectInput.typeProject]\n        }\n        return newConf;\n    },\n    \"se\":function(){\n        var newSe = {\"codeSousEnsemble\":\"\",\"designation\":\"\",\"activities\":[]};\n    \n        if($data.formInput.projectInput.typeProject){\n            newSe.activities = activities[$data.formInput.projectInput.typeProject]\n        }\n        return newSe;\n    }\n}",
+      "exposed" : false
+    },
+    "ext_responsable" : {
+      "type" : "json",
+      "value" : "{\"responsables\":[{\"value\":\"BE - CARTRON\",\"key\":\"00000101\"},{\"value\":\"BE - LEPAGE\",\"key\":\"00000102\"},{\"value\":\"BE - FORESTIER\",\"key\":\"00000103\"},{\"value\":\"BE - PBERNARD\",\"key\":\"00000104\"},{\"value\":\"BE - MAES\",\"key\":\"00000105\"},{\"value\":\"BE - EVRARD\",\"key\":\"00000106\"},{\"value\":\"BE - DAUDET\",\"key\":\"00000107\"},{\"value\":\"BE - CBERNARD\",\"key\":\"00000108\"},{\"value\":\"BE - DAVET\",\"key\":\"00000109\"},{\"value\":\"BE - ZEFERINO\",\"key\":\"00000201\"},{\"value\":\"BE - LEMANCEL\",\"key\":\"00000202\"},{\"value\":\"BE - THIBLIER\",\"key\":\"00000203\"},{\"value\":\"BE - PEYRUSAUBES\",\"key\":\"00000204\"},{\"value\":\"BE - FROYE\",\"key\":\"00000205\"},{\"value\":\"BE - SAMSON\",\"key\":\"00000206\"},{\"value\":\"BE - TROUILLARD\",\"key\":\"00000207\"},{\"value\":\"BE - CALLE\",\"key\":\"00000208\"},{\"value\":\"BE - MARION\",\"key\":\"00000209\"},{\"value\":\"BE - LAAOUISSID\",\"key\":\"00000210\"},{\"value\":\"BE - MONEYRON\",\"key\":\"00000211\"},{\"value\":\"BE - CAMPOY\",\"key\":\"00000212\"},{\"value\":\"BE - AMSTOUTZ\",\"key\":\"00000213\"},{\"value\":\"BE - TAVERNIER\",\"key\":\"00000214\"},{\"value\":\"BE - SIMON\",\"key\":\"00000216\"},{\"value\":\"BE - CATELLE\",\"key\":\"00000217\"},{\"value\":\"BE - KAGAN\",\"key\":\"00000218\"},{\"value\":\"BE - DARRAS\",\"key\":\"00000219\"},{\"value\":\"BE - KWARTNIK - SUPP\",\"key\":\"00000220\"},{\"value\":\"BE - PORNIN\",\"key\":\"00000221\"},{\"value\":\"BE - FARRUGIA\",\"key\":\"00000222\"},{\"value\":\"BE - RENARD\",\"key\":\"00000223\"},{\"value\":\"BE - VERGNES\",\"key\":\"00000224\"},{\"value\":\"BE - HAYE\",\"key\":\"00000225\"},{\"value\":\"BE - WOLF\",\"key\":\"00000226\"},{\"value\":\"BE - MAILLOU\",\"key\":\"00000227\"},{\"value\":\"BE - MOREL\",\"key\":\"00000228\"},{\"value\":\"BE - AUGUSTYN\",\"key\":\"00000229\"},{\"value\":\"BE - IZARD\",\"key\":\"00000230\"},{\"value\":\"BE - GAZAGNE\",\"key\":\"00000231\"},{\"value\":\"BE - GALLAIS\",\"key\":\"00000232\"},{\"value\":\"BE - GOURARI\",\"key\":\"00000233\"},{\"value\":\"BE - WONGERMEZ\",\"key\":\"00000234\"},{\"value\":\"DAG - CHAMIEH\",\"key\":\"00000301\"},{\"value\":\"DAG - CHAVAND\",\"key\":\"00000302\"},{\"value\":\"DAG - COLOOS\",\"key\":\"00000303\"},{\"value\":\"DAG - GILLARD\",\"key\":\"00000304\"},{\"value\":\"DAG - GUILLOT\",\"key\":\"00000305\"},{\"value\":\"DAG - NIFFLE\",\"key\":\"00000306\"},{\"value\":\"DAG - LARRAY\",\"key\":\"00000307\"},{\"value\":\"DAG - MARTINEZ\",\"key\":\"00000308\"},{\"value\":\"DAG - MARTIGINIAT\",\"key\":\"00000309\"},{\"value\":\"DAG - RIOU\",\"key\":\"00000310\"},{\"value\":\"DPJ - DORP\",\"key\":\"00000401\"},{\"value\":\"DPJ - NIKOLOV\",\"key\":\"00000402\"},{\"value\":\"DPJ - BON\",\"key\":\"00000403\"},{\"value\":\"DPJ - GROUX\",\"key\":\"00000404\"},{\"value\":\"DPJ - LEMAITRE\",\"key\":\"00000405\"},{\"value\":\"DPJ - D'HALLUIN\",\"key\":\"00000406\"},{\"value\":\"DPJ - PUVIS\",\"key\":\"00000407\"},{\"value\":\"DPJ - APRETNA\",\"key\":\"00000408\"},{\"value\":\"DPJ - DUTRIEUX\",\"key\":\"00000409\"},{\"value\":\"DPJ - MARTIN\",\"key\":\"00000410\"},{\"value\":\"DPJ - THIERY\",\"key\":\"00000411\"},{\"value\":\"DPJ - FIZE\",\"key\":\"00000412\"},{\"value\":\"DPJ \\u2013 LECONTE\",\"key\":\"00000413\"},{\"value\":\"DPJ - TAVERNIER\",\"key\":\"00000414\"},{\"value\":\"INN - DELARUE\",\"key\":\"00000501\"},{\"value\":\"INN - MOREL\",\"key\":\"00000503\"},{\"value\":\"INN - GARSON\",\"key\":\"00000504\"},{\"value\":\"INN - GUILLO\",\"key\":\"00000508\"},{\"value\":\"INN - CARRENO\",\"key\":\"00000511\"},{\"value\":\"INN - VIE LE SAGE\",\"key\":\"00000512\"},{\"value\":\"INN - De RUFFRAY\",\"key\":\"00000513\"},{\"value\":\"PP - CADIOU\",\"key\":\"00000601\"},{\"value\":\"PP - BARTHES\",\"key\":\"00000602\"},{\"value\":\"PP - MOREL\",\"key\":\"00000603\"},{\"value\":\"PP - COUTIN\",\"key\":\"00000604\"},{\"value\":\"Ne pas utiliser\",\"key\":\"00000605\"},{\"value\":\"SC - SARESANI\",\"key\":\"00000701\"},{\"value\":\"SC- HINARD\",\"key\":\"00000702\"},{\"value\":\"SC- DELAUNAY\",\"key\":\"00000703\"},{\"value\":\"SC- CHEVALME\",\"key\":\"00000704\"},{\"value\":\"SC - BOUT\",\"key\":\"00000705\"},{\"value\":\"SC - GIRARD PETIT\",\"key\":\"00000706\"},{\"value\":\"DOA - BARRE\",\"key\":\"00000801\"}],\"message\":\"Success\"}",
+      "exposed" : false
+    },
+    "exp_tost" : {
+      "type" : "expression",
+      "value" : "\nif($data.ext_responsable && $data.ext_responsable.message && $data.ext_responsable.message!== \"Success\"){\n    var toast={};\n    toast.type = \"danger\"; \n    toast.title = \"SAP connection\", \n    toast.text =\"SAP connection did not work\"    \n    $data.temp.toasters.push(toast)\n    $data.ext_responsable.message = \"Error handled\"\n}\n",
       "exposed" : false
     }
   },
